@@ -1,0 +1,579 @@
+---
+publishDate: 2024-09-12T00:00:00Z
+title: 'Complete AstroWind Components Showcase'
+excerpt: 'A comprehensive demonstration of all available AstroWind components including Hero sections, Features, Content blocks, Testimonials, Pricing, FAQs, and more.'
+image: ~/assets/images/hero-image.png
+category: demo
+tags:
+  - astro
+  - components
+  - showcase
+  - demo
+  - widgets
+draft: false
+---
+
+import Hero from '~/components/widgets/Hero.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Content from '~/components/widgets/Content.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Brands from '~/components/widgets/Brands.astro';
+import Pricing from '~/components/widgets/Pricing.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Contact from '~/components/widgets/Contact.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Note from '~/components/widgets/Note.astro';
+import Announcement from '~/components/widgets/Announcement.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+
+# Welcome to the AstroWind Component Showcase
+
+This page demonstrates every major component available in the AstroWind template. Use this as a reference to see how each component looks and behaves in practice.
+
+---
+
+## Hero Components
+
+### Standard Hero
+
+The main hero component with image, text, and action buttons.
+
+<Hero
+  title="Transform Your Ideas Into <span class='text-accent highlight'>Reality</span>"
+  subtitle="Discover the power of AstroWind's component library with this comprehensive showcase featuring every widget, layout, and interactive element available in the template."
+  tagline="Component Showcase"
+  actions={[
+    { variant: 'primary', text: 'Get Started', href: '#features', icon: 'tabler:rocket' },
+    { text: 'View Components', href: '#components', icon: 'tabler:eye' },
+  ]}
+  image={{ src: '~/assets/images/hero-image.png', alt: 'Hero showcase image' }}
+/>
+
+### Alternative Hero (Hero2)
+
+A different visual treatment for variety.
+
+<Hero2
+  title="Alternative Hero Style"
+  subtitle="This Hero2 component provides a different layout and styling approach for your landing pages."
+  actions={[{ variant: 'primary', text: 'Explore More', href: '#', icon: 'tabler:arrow-right' }]}
+  image={{ src: '~/assets/images/default.png', alt: 'Alternative hero image' }}
+/>
+
+### Text-Only Hero (HeroText)
+
+Clean, text-focused hero without images.
+
+<HeroText
+  title="Pure Text Hero Section"
+  subtitle="Sometimes you need a clean, text-focused approach without images. The HeroText component is perfect for content-heavy pages or minimalist designs."
+  actions={[
+    { variant: 'secondary', text: 'Learn More', href: '#content' },
+    { text: 'Documentation', href: '#', icon: 'tabler:book' },
+  ]}
+/>
+
+---
+
+## Feature Components
+
+### Standard Features Grid
+
+<Features
+  id="features"
+  title="Powerful Features"
+  subtitle="Everything you need to build amazing websites"
+  tagline="Features"
+  columns={3}
+  items={[
+    {
+      title: 'Lightning Fast',
+      description: 'Built with Astro 5.0 for optimal performance and quick loading times.',
+      icon: 'tabler:bolt',
+    },
+    {
+      title: 'Responsive Design',
+      description: 'Mobile-first approach ensures your site looks great on all devices.',
+      icon: 'tabler:device-mobile',
+    },
+    {
+      title: 'SEO Optimized',
+      description: 'Built-in SEO best practices help your site rank better in search engines.',
+      icon: 'tabler:search',
+    },
+    {
+      title: 'Type Safe',
+      description: 'Full TypeScript support for better development experience and fewer bugs.',
+      icon: 'tabler:shield-check',
+    },
+    {
+      title: 'Dark Mode',
+      description: 'Built-in dark mode support with smooth transitions and theme persistence.',
+      icon: 'tabler:moon',
+    },
+    {
+      title: 'Customizable',
+      description: 'Easily customize colors, fonts, and layouts to match your brand.',
+      icon: 'tabler:palette',
+    },
+  ]}
+  defaultIcon="tabler:check"
+/>
+
+### Compact Features (Features2)
+
+<Features2
+  title="Additional Benefits"
+  subtitle="More reasons to choose AstroWind"
+  items={[
+    {
+      title: 'Zero JavaScript',
+      description: 'Ships with minimal JavaScript for maximum performance',
+      icon: 'flat-color-icons:flash',
+    },
+    {
+      title: 'Easy Deployment',
+      description: 'Deploy anywhere - Netlify, Vercel, GitHub Pages, or your own server',
+      icon: 'flat-color-icons:deployment',
+    },
+    {
+      title: 'Component Library',
+      description: 'Rich collection of pre-built components ready to use',
+      icon: 'flat-color-icons:gallery',
+    },
+    {
+      title: 'Developer Friendly',
+      description: 'Excellent developer experience with hot reload and TypeScript',
+      icon: 'flat-color-icons:approval',
+    },
+  ]}
+/>
+
+### Feature List (Features3)
+
+<Features3
+  title="Advanced Capabilities"
+  items={[
+    {
+      title: 'Image Optimization',
+      description: 'Automatic image optimization with Sharp for better performance',
+      icon: 'tabler:photo',
+    },
+    {
+      title: 'Markdown Support',
+      description: 'Full MDX support for dynamic content with React components',
+      icon: 'tabler:markdown',
+    },
+    {
+      title: 'Analytics Ready',
+      description: 'Built-in Google Analytics integration for tracking performance',
+      icon: 'tabler:chart-line',
+    },
+  ]}
+/>
+
+---
+
+## Content Sections
+
+### Rich Content with Image
+
+<Content
+  title="About Our Solution"
+  subtitle="Learn more about what makes AstroWind special"
+  content="AstroWind combines the power of Astro's static site generation with a comprehensive component library. Built with performance and developer experience in mind, it provides everything you need to create professional websites quickly."
+  items={[
+    {
+      title: 'Modern Architecture',
+      description: 'Built on Astro 5.0 with the latest web standards and best practices.',
+    },
+    {
+      title: 'Performance First',
+      description: 'Optimized for Core Web Vitals and lightning-fast loading times.',
+    },
+    {
+      title: 'Developer Experience',
+      description: 'TypeScript support, hot reload, and excellent tooling for productivity.',
+    },
+  ]}
+  image={{
+    src: '~/assets/images/default.png',
+    alt: 'AstroWind solution overview',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+      Custom Content Section
+    </h3>
+    <p>
+      This content is added through the content slot, allowing for more complex layouts and custom HTML structures
+      when needed.
+    </p>
+  </Fragment>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-slate-800"></div>
+  </Fragment>
+</Content>
+
+### Reversed Content Layout
+
+<Content
+  title="Flexible Layouts"
+  subtitle="Content can be arranged in multiple ways"
+  content="The Content component supports reversed layouts, background customization, and flexible content arrangement to suit your design needs."
+  isReversed={true}
+  items={[
+    {
+      title: 'Reversed Layout',
+      description: 'Image and content positions can be flipped for visual variety.',
+    },
+    {
+      title: 'Background Options',
+      description: 'Custom backgrounds through slots for enhanced visual appeal.',
+    },
+  ]}
+  image={{
+    src: '~/assets/images/hero-image.png',
+    alt: 'Flexible layout example',
+  }}
+/>
+
+---
+
+## Process Components
+
+### Step-by-Step Guide
+
+<Steps
+  title="How to Get Started"
+  items={[
+    {
+      title: 'Step 1: <span class="font-medium">Install</span>',
+      description: 'Clone the repository and install dependencies with npm or yarn.',
+      icon: 'tabler:package',
+    },
+    {
+      title: 'Step 2: <span class="font-medium">Customize</span>',
+      description: 'Update the configuration, colors, and content to match your needs.',
+      icon: 'tabler:settings',
+    },
+    {
+      title: 'Step 3: <span class="font-medium">Deploy</span>',
+      description: 'Build and deploy your site to your preferred hosting platform.',
+      icon: 'tabler:rocket',
+    },
+    {
+      title: 'Ready to Go!',
+      description: 'Your new website is live and ready for visitors.',
+      icon: 'tabler:check',
+    },
+  ]}
+  image={{ src: '~/assets/images/default.png', alt: 'Getting started process' }}
+/>
+
+### Simple Process Steps
+
+<Steps2
+  title="Development Workflow"
+  items={[
+    {
+      title: 'Design',
+      description: 'Plan your layout and choose components',
+    },
+    {
+      title: 'Build',
+      description: 'Implement using AstroWind components',
+    },
+    {
+      title: 'Test',
+      description: 'Verify responsiveness and performance',
+    },
+    {
+      title: 'Launch',
+      description: 'Deploy to production',
+    },
+  ]}
+/>
+
+---
+
+## Social Proof Components
+
+### Customer Testimonials
+
+<Testimonials
+  title="What Our Users Say"
+  testimonials={[
+    {
+      testimonial:
+        'AstroWind has completely transformed how we build websites. The component library is comprehensive and the performance is outstanding.',
+      name: 'Sarah Johnson',
+      job: 'Frontend Developer, TechCorp',
+      image: '~/assets/images/default.png',
+    },
+    {
+      testimonial:
+        "The best Astro template I've used. Clean code, great documentation, and excellent component variety.",
+      name: 'Mike Chen',
+      job: 'Lead Developer',
+    },
+    {
+      testimonial:
+        'We launched our new marketing site in just two weeks using AstroWind. The components are flexible and well-designed.',
+      name: 'Emily Rodriguez',
+      job: 'Marketing Director, StartupCo',
+    },
+  ]}
+  callToAction={{
+    variant: 'primary',
+    text: 'Start Building',
+    href: '#pricing',
+  }}
+/>
+
+### Key Statistics
+
+<Stats
+  stats={[
+    { title: 'Components', amount: '25+', icon: 'tabler:components' },
+    { title: 'Download Time', amount: '<1s', icon: 'tabler:clock' },
+    { title: 'Lighthouse Score', amount: '100', icon: 'tabler:award' },
+    { title: 'GitHub Stars', amount: '1.2K+', icon: 'tabler:star' },
+  ]}
+/>
+
+### Partner Brands
+
+<Brands
+  title="Trusted by Leading Companies"
+  subtitle="Organizations using AstroWind for their websites"
+  images={[
+    { src: '~/assets/images/default.png', alt: 'Company 1' },
+    { src: '~/assets/images/default.png', alt: 'Company 2' },
+    { src: '~/assets/images/default.png', alt: 'Company 3' },
+    { src: '~/assets/images/default.png', alt: 'Company 4' },
+  ]}
+/>
+
+---
+
+## Pricing Section
+
+<Pricing
+  id="pricing"
+  title="Choose Your Plan"
+  subtitle="Flexible options for every project size"
+  prices={[
+    {
+      title: 'Starter',
+      subtitle: 'Perfect for personal projects',
+      price: 0,
+      period: 'forever',
+      items: [
+        { title: 'All Components' },
+        { title: 'Basic Documentation' },
+        { title: 'Community Support' },
+        { title: 'MIT License' },
+      ],
+      callToAction: {
+        text: 'Get Started',
+        href: '#',
+      },
+      hasRibbon: false,
+    },
+    {
+      title: 'Pro',
+      subtitle: 'Ideal for business websites',
+      price: 49,
+      period: 'one-time',
+      items: [
+        { title: 'Premium Components' },
+        { title: 'Advanced Layouts' },
+        { title: 'Priority Support' },
+        { title: 'Design System' },
+        { title: 'Commercial License' },
+      ],
+      callToAction: {
+        text: 'Choose Pro',
+        href: '#',
+      },
+      hasRibbon: true,
+      ribbonTitle: 'Popular',
+    },
+    {
+      title: 'Enterprise',
+      subtitle: 'For large organizations',
+      price: 199,
+      period: 'one-time',
+      items: [
+        { title: 'Everything in Pro' },
+        { title: 'Custom Components' },
+        { title: 'Dedicated Support' },
+        { title: 'Training Sessions' },
+        { title: 'Extended License' },
+      ],
+      callToAction: {
+        text: 'Contact Sales',
+        href: '#contact',
+      },
+      hasRibbon: false,
+    },
+  ]}
+/>
+
+---
+
+## Interactive Components
+
+### Frequently Asked Questions
+
+<FAQs
+  title="Frequently Asked Questions"
+  subtitle="Find answers to common questions about AstroWind"
+  tagline="FAQ"
+  items={[
+    {
+      title: 'What is AstroWind?',
+      description:
+        'AstroWind is a production-ready template built with Astro 5.0 and Tailwind CSS, providing a comprehensive collection of pre-built components for creating professional websites, landing pages, and blogs.',
+    },
+    {
+      title: 'Do I need coding experience?',
+      description:
+        'While basic HTML/CSS knowledge is helpful, AstroWind is designed to be beginner-friendly. The components are well-documented and easy to customize even for those new to web development.',
+    },
+    {
+      title: 'Can I use this for commercial projects?',
+      description:
+        'Yes! AstroWind comes with an MIT license, allowing you to use it for both personal and commercial projects without any restrictions.',
+    },
+    {
+      title: 'Is it mobile responsive?',
+      description:
+        'Absolutely! All components are built with a mobile-first approach and are fully responsive across all device sizes and screen resolutions.',
+    },
+    {
+      title: 'How do I customize the design?',
+      description:
+        'You can customize colors, fonts, spacing, and layouts through the configuration files and by modifying the Tailwind CSS classes. The template is highly customizable while maintaining good structure.',
+    },
+    {
+      title: 'What about browser support?',
+      description:
+        'AstroWind supports all modern browsers including Chrome, Firefox, Safari, and Edge. The generated static files work even on older browsers with graceful degradation.',
+    },
+  ]}
+  classes={{ container: 'max-w-6xl' }}
+/>
+
+### Contact Form
+
+<Contact
+  id="contact"
+  title="Get in Touch"
+  subtitle="Have questions? We'd love to hear from you"
+  inputs={[
+    { type: 'text', name: 'name', label: 'Name', placeholder: 'Your full name' },
+    { type: 'email', name: 'email', label: 'Email', placeholder: 'your.email@example.com' },
+    { type: 'text', name: 'subject', label: 'Subject', placeholder: 'What is this about?' },
+  ]}
+  textarea={{
+    label: 'Message',
+    name: 'message',
+    placeholder: 'Tell us more about your project or question...',
+    rows: 4,
+  }}
+  disclaimer={{
+    label: 'By submitting this form, you agree to our privacy policy and terms of service.',
+  }}
+  button="Send Message"
+/>
+
+---
+
+## Call-to-Action Components
+
+<CallToAction
+  actions={[
+    {
+      variant: 'primary',
+      text: 'Start Building Today',
+      href: '#',
+      icon: 'tabler:rocket',
+    },
+    {
+      text: 'View Documentation',
+      href: '#',
+    },
+  ]}
+>
+  <Fragment slot="title">Ready to Build Something Amazing?</Fragment>
+
+  <Fragment slot="subtitle">
+    Join thousands of developers who have chosen AstroWind for their projects. Get started today and see the
+    difference.
+  </Fragment>
+</CallToAction>
+
+---
+
+## Utility Components
+
+### Important Note
+
+<Note
+  title="🎉 New Version Available"
+  description="AstroWind has been updated to work with Astro 5.0. Check out the latest features and improvements in the changelog."
+/>
+
+### Announcement Banner
+
+<Announcement
+  text="🚀 Limited Time: Get 50% off Pro licenses until the end of the month!"
+  href="#pricing"
+  target="_self"
+/>
+
+---
+
+## Blog Components
+
+### Latest Blog Posts
+
+<BlogLatestPosts
+  title="Latest from the Blog"
+  information="Stay updated with tutorials, tips, and insights about web development and AstroWind."
+/>
+
+---
+
+## Conclusion
+
+This comprehensive showcase demonstrates the full power and flexibility of the AstroWind component library. Each component is:
+
+- **Fully responsive** - Works perfectly on all device sizes
+- **Highly customizable** - Easy to modify colors, content, and layout
+- **Performance optimized** - Built with Astro's zero-JavaScript approach
+- **Accessible** - Follows web accessibility best practices
+- **SEO-friendly** - Optimized for search engines
+
+### Next Steps
+
+1. **Explore the code** - Check out the component implementations
+2. **Customize the design** - Modify colors and styles to match your brand
+3. **Add your content** - Replace the demo content with your own
+4. **Deploy your site** - Launch to your preferred hosting platform
+
+Whether you're building a personal portfolio, business website, or complex web application, AstroWind provides the foundation you need to create something exceptional.
+
+---
+
+_This demo post showcases all major components available in AstroWind. Use it as a reference when building your own pages and feel free to copy any code examples that fit your needs._
