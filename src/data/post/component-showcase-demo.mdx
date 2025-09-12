@@ -19,7 +19,7 @@ import HeroText from '~/components/widgets/HeroText.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Features3 from '~/components/widgets/Features3.astro';
-import Content from '~/components/widgets/Content.astro';
+import ContentWidget from '~/components/widgets/Content.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
@@ -136,22 +136,22 @@ Clean, text-focused hero without images.
     {
       title: 'Zero JavaScript',
       description: 'Ships with minimal JavaScript for maximum performance',
-      icon: 'flat-color-icons:flash',
+      icon: 'tabler:bolt',
     },
     {
       title: 'Easy Deployment',
       description: 'Deploy anywhere - Netlify, Vercel, GitHub Pages, or your own server',
-      icon: 'flat-color-icons:deployment',
+      icon: 'tabler:cloud-upload',
     },
     {
       title: 'Component Library',
       description: 'Rich collection of pre-built components ready to use',
-      icon: 'flat-color-icons:gallery',
+      icon: 'tabler:photo',
     },
     {
       title: 'Developer Friendly',
       description: 'Excellent developer experience with hot reload and TypeScript',
-      icon: 'flat-color-icons:approval',
+      icon: 'tabler:circle-check',
     },
   ]}
 />
@@ -185,7 +185,7 @@ Clean, text-focused hero without images.
 
 ### Rich Content with Image
 
-<Content
+<ContentWidget
   title="About Our Solution"
   subtitle="Learn more about what makes AstroWind special"
   content="AstroWind combines the power of Astro's static site generation with a comprehensive component library. Built with performance and developer experience in mind, it provides everything you need to create professional websites quickly."
@@ -221,11 +221,11 @@ Clean, text-focused hero without images.
   <Fragment slot="bg">
     <div class="absolute inset-0 bg-blue-50 dark:bg-slate-800"></div>
   </Fragment>
-</Content>
+</ContentWidget>
 
 ### Reversed Content Layout
 
-<Content
+<ContentWidget
   title="Flexible Layouts"
   subtitle="Content can be arranged in multiple ways"
   content="The Content component supports reversed layouts, background customization, and flexible content arrangement to suit your design needs."

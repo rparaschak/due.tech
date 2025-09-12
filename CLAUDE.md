@@ -23,7 +23,7 @@ src/
 
 ## Development Commands
 
-IMPORTANT: After each task run `npm run fix && npm run check` to make sure project builds
+IMPORTANT: After each task run `npm run fix && npm run check && npm run build` to make sure project builds
 
 - `npm run dev` - Start development server (localhost:4321)
 - `npm run build` - Build production site
