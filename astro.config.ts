@@ -23,6 +23,8 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 
 export default defineConfig({
   output: 'static',
+  site: 'https://rparaschak.github.io',
+  base: '/due.tech',
 
   integrations: [
     tailwind({
