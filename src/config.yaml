@@ -1,7 +1,7 @@
 site:
-  name: AstroWind
-  site: 'https://astrowind.vercel.app'
-  base: '/'
+  name: DueTech
+  site: 'https://rparaschak.github.io/due.tech'
+  base: '/due.tech'
   trailingSlash: false
 
   googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
