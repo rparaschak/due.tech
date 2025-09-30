@@ -1,0 +1,33 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+
+const metadata = {
+  title: 'Technical Due Diligence',
+  description: 'Comprehensive technical evaluation and risk assessment for your business decisions.',
+  ignoreTitleTemplate: false,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+  <Hero>
+    <Fragment slot="title">
+      <span class="text-accent dark:text-white">Technical Due Diligence</span> Services
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Make informed decisions with comprehensive technical assessments, code reviews, and technology risk evaluations.
+    </Fragment>
+  </Hero>
+
+  <!-- Content placeholder -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">Coming Soon</h2>
+      <p class="text-lg text-gray-600 dark:text-gray-300">
+        Detailed information about our technical due diligence services will be available here.
+      </p>
+    </div>
+  </section>
+</Layout>

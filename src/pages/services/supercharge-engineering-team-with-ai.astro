@@ -1,0 +1,45 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+
+const metadata = {
+  title: 'AI Supercharge',
+  description: 'Transform your engineering team with AI-powered solutions and productivity tools.',
+  ignoreTitleTemplate: false,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get Your Free Consultation',
+        href: '#contact',
+        icon: 'tabler:calendar',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Your Competitors Are Already Using AI to Ship Better Code Faster. <span class="text-accent dark:text-white"
+        >Are You?</span
+      >
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      I'll implement the exact AI-powered development workflow I use in my own company - proven to accelerate code
+      generation, automate testing, and eliminate manual code reviews
+    </Fragment>
+  </Hero>
+
+  <!-- Content placeholder -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">Coming Soon</h2>
+      <p class="text-lg text-gray-600 dark:text-gray-300">
+        Detailed information about our AI engineering solutions will be available here.
+      </p>
+    </div>
+  </section>
+</Layout>
