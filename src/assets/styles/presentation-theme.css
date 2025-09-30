@@ -1,0 +1,83 @@
+/* Custom Reveal.js Theme Overrides */
+
+/* Global background color for all presentations */
+.reveal {
+  background-color: #1a1f2e;
+}
+
+/* Ensure slide backgrounds inherit the global background */
+.reveal .slides {
+  background-color: transparent;
+}
+
+/* Title Slide Typography */
+.reveal .title-slide h1,
+.reveal section[data-state="title"] h1 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 3.5rem; /* 56pt equivalent */
+  color: #0ea5c1;
+  margin-bottom: 0.5em;
+}
+
+.reveal .title-slide h2,
+.reveal section[data-state="title"] h2 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  font-size: 1.75rem; /* 28pt equivalent */
+  color: #a0aec0;
+}
+
+/* Heading Typography (non-title slides) */
+.reveal h1:not(.title-slide h1):not(section[data-state="title"] h1) {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem; /* 40pt equivalent */
+  color: #0ea5c1;
+  margin-bottom: 0.75em;
+}
+
+.reveal h2:not(.title-slide h2):not(section[data-state="title"] h2) {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  font-size: 2rem; /* 32pt equivalent */
+  color: #0ea5c1;
+  margin-bottom: 0.75em;
+}
+
+.reveal h3 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem; /* 24pt equivalent */
+  color: #e8eef2;
+  margin-bottom: 0.75em;
+}
+
+/* Body Text Typography */
+.reveal {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  font-size: 1.25rem; /* 20pt equivalent */
+  color: #e8eef2;
+  line-height: 1.6;
+}
+
+/* Body text elements */
+.reveal p,
+.reveal ul,
+.reveal ol,
+.reveal li {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  font-size: 1.25rem; /* 20pt equivalent */
+  color: #e8eef2;
+}
+
+/* Small text */
+.reveal small,
+.reveal .small {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  font-size: 1rem; /* 16pt equivalent */
+  color: #a0aec0;
+}
