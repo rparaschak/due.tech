@@ -31,8 +31,16 @@ The custom presentation theme (`presentation-theme.css`) overrides default Revea
 - **H3**: Nunito SemiBold, 24pt (1.5rem), `#e8eef2` (light gray)
 
 **Body Text**:
-- **Regular**: Nunito Regular, 20pt (1.25rem), `#e8eef2` (light gray)
+- **Regular**: Nunito Regular, 20pt (1.25rem), `#e8eef2` (light gray), line height 1.6
 - **Small**: Nunito Regular, 16pt (1rem), `#a0aec0` (gray-blue) - Use `<small>` tag or `.small` class
+
+**Lists**:
+- **Bullet points**: `#0ea5c1` (teal)
+- **List items**: Nunito Regular, 20pt (1.25rem), `#e8eef2` (light gray)
+- **Line spacing**: 1.5
+
+**Emphasis**:
+- **Strong/Bold**: Nunito Bold, same size as context, `#0ea5c1` (teal) - Use `<strong>` or `<b>` tag
 
 ## Available Reveal.js Themes
 

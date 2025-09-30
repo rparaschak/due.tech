@@ -63,14 +63,36 @@
 }
 
 /* Body text elements */
-.reveal p,
+.reveal p {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  font-size: 1.25rem; /* 20pt equivalent */
+  color: #e8eef2;
+  line-height: 1.6;
+}
+
+/* Lists */
 .reveal ul,
-.reveal ol,
+.reveal ol {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  font-size: 1.25rem; /* 20pt equivalent */
+  color: #e8eef2;
+  line-height: 1.5;
+}
+
 .reveal li {
   font-family: 'Nunito', sans-serif;
   font-weight: 400;
   font-size: 1.25rem; /* 20pt equivalent */
   color: #e8eef2;
+  line-height: 1.5;
+  margin-bottom: 0.3em;
+}
+
+/* Bullet point color */
+.reveal ul li::marker {
+  color: #0ea5c1;
 }
 
 /* Small text */
@@ -80,4 +102,12 @@
   font-weight: 400;
   font-size: 1rem; /* 16pt equivalent */
   color: #a0aec0;
+}
+
+/* Emphasis - Strong/Bold Text */
+.reveal strong,
+.reveal b {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  color: #0ea5c1;
 }
