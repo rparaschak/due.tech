@@ -37,126 +37,7 @@ const metadata = {
       </div>
     </Fragment>
   </Hero>
-
-  <!-- Transformation Comparison ******* -->
-
-  <Content
-    title="From Development Bottlenecks to High-Performance Delivery"
-    items={[
-      {
-        title: 'Lack of Test Automation',
-        description: 'Tests are time-consuming and usually skipped when under pressure. 30-40% coverage at best. Bugs escape to production regularly, costing customer trust and emergency fixes.',
-        icon: 'tabler:question-mark',
-        classes: {
-          icon: 'flex h-7 w-7 items-center justify-center rounded-full bg-gray-500 dark:bg-gray-600 text-gray-50 p-1',
-        },
-      },
-      {
-        title: 'Manual Code Reviews Catch Issues Too Late',
-        description: 'Senior developers spend hours reviewing PRs. Performance, security, and scalability issues found in production—or worse, never found at all until customers complain.',
-        icon: 'tabler:question-mark',
-        classes: {
-          icon: 'flex h-7 w-7 items-center justify-center rounded-full bg-gray-500 dark:bg-gray-600 text-gray-50 p-1',
-        },
-      },
-      {
-        title: 'Hours Wasted on Boilerplate Code',
-        description: 'Developers spend significant time writing repetitive CRUD operations, API endpoints, and data models instead of solving actual business problems.',
-        icon: 'tabler:question-mark',
-        classes: {
-          icon: 'flex h-7 w-7 items-center justify-center rounded-full bg-gray-500 dark:bg-gray-600 text-gray-50 p-1',
-        },
-      },
-      {
-        title: 'Refactoring is Painful and Risky',
-        description: 'Fear of breaking things makes refactoring slow and stressful. Without comprehensive tests, every change feels like walking on eggshells. Technical debt accumulates.',
-        icon: 'tabler:question-mark',
-        classes: {
-          icon: 'flex h-7 w-7 items-center justify-center rounded-full bg-gray-500 dark:bg-gray-600 text-gray-50 p-1',
-        },
-      },
-      {
-        title: 'Onboarding Challenges',
-        description: 'New engineers take 2-3 weeks to deliver their first feature. Documentation is outdated because keeping it current requires significant time nobody has.',
-        icon: 'tabler:question-mark',
-        classes: {
-          icon: 'flex h-7 w-7 items-center justify-center rounded-full bg-gray-500 dark:bg-gray-600 text-gray-50 p-1',
-        },
-      },
-    ]}
-  >
-    <Fragment slot="content">
-      <h3 class="text-xl text-muted mb-6 dark:text-slate-300">Your Current Development Reality</h3>
-    </Fragment>
-
-    <Fragment slot="image">
-      <div class="space-y-4 md:space-y-8">
-        <h3 class="text-xl text-muted mb-6 dark:text-slate-300">AI-Powered Development Workflow</h3>
-
-        <div class="flex flex-row">
-          <div class="flex justify-center mr-2">
-            <div class="flex h-7 w-7 items-center justify-center rounded-full bg-green-600 dark:bg-green-700 text-gray-50 p-1">
-              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            </div>
-          </div>
-          <div class="mt-0.5">
-            <h4 class="text-lg font-medium leading-6 dark:text-white">Automated Test Generation</h4>
-            <p class="mt-3 text-muted dark:text-slate-400">Comprehensive unit, integration, and E2E tests generated in 5-10 minutes. 85-95% coverage maintained consistently. Ship with confidence, not anxiety.</p>
-          </div>
-        </div>
-
-        <div class="flex flex-row">
-          <div class="flex justify-center mr-2">
-            <div class="flex h-7 w-7 items-center justify-center rounded-full bg-green-600 dark:bg-green-700 text-gray-50 p-1">
-              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            </div>
-          </div>
-          <div class="mt-0.5">
-            <h4 class="text-lg font-medium leading-6 dark:text-white">AI Code Review Catches Issues Early</h4>
-            <p class="mt-3 text-muted dark:text-slate-400">Automated reviews flag performance, security, and scalability problems before human reviewers see the code. Senior devs focus on architecture decisions, not syntax checking.</p>
-          </div>
-        </div>
-
-        <div class="flex flex-row">
-          <div class="flex justify-center mr-2">
-            <div class="flex h-7 w-7 items-center justify-center rounded-full bg-green-600 dark:bg-green-700 text-gray-50 p-1">
-              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            </div>
-          </div>
-          <div class="mt-0.5">
-            <h4 class="text-lg font-medium leading-6 dark:text-white">Boilerplate Generated in Minutes</h4>
-            <p class="mt-3 text-muted dark:text-slate-400">AI creates production-ready CRUD operations, API endpoints, and data models instantly. Your team focuses on unique business logic and customer value.</p>
-          </div>
-        </div>
-
-        <div class="flex flex-row">
-          <div class="flex justify-center mr-2">
-            <div class="flex h-7 w-7 items-center justify-center rounded-full bg-green-600 dark:bg-green-700 text-gray-50 p-1">
-              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            </div>
-          </div>
-          <div class="mt-0.5">
-            <h4 class="text-lg font-medium leading-6 dark:text-white">Refactor Fearlessly with AI-Generated Tests</h4>
-            <p class="mt-3 text-muted dark:text-slate-400">Comprehensive test coverage makes refactoring safe and fast. AI helps restructure code and regenerates tests automatically. Technical debt gets paid down, not accumulated.</p>
-          </div>
-        </div>
-
-        <div class="flex flex-row">
-          <div class="flex justify-center mr-2">
-            <div class="flex h-7 w-7 items-center justify-center rounded-full bg-green-600 dark:bg-green-700 text-gray-50 p-1">
-              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            </div>
-          </div>
-          <div class="mt-0.5">
-            <h4 class="text-lg font-medium leading-6 dark:text-white">Fast Onboarding with AI-Powered Documentation</h4>
-            <p class="mt-3 text-muted dark:text-slate-400">New engineers deliver their first feature in 2-3 days. Documentation updates automatically as code changes. AI-generated onboarding guides and codebase explanations eliminate the knowledge bottleneck.</p>
-          </div>
-        </div>
-      </div>
-    </Fragment>
-  </Content>
-
-  <!-- Problems Widget *************** -->
+  git status
 
   <Features
     id="problems"
@@ -165,29 +46,34 @@ const metadata = {
     subtitle="These pain points are costing your team precious development time and competitive advantage."
     items={[
       {
-        title: 'Manual Code Reviews',
-        description: 'Your senior developers spend hours on code reviews instead of building features',
-        icon: 'tabler:refresh',
+        title: 'Slow Feature Delivery',
+        description: 'Your competitors ship new features weekly while your team struggles to deliver monthly. Manual processes, missing tests, and fear of breaking things create a slow, cautious development cycle that kills momentum.',
+        icon: 'tabler:clock',
       },
       {
-        title: 'Testing & Documentation Overhead',
-        description: 'Writing comprehensive tests and documentation eats up 40% of development time',
-        icon: 'tabler:file-text',
+        title: 'Senior Developer Time Wasted',
+        description: 'Your most expensive talent spends hours on code reviews, writing boilerplate, and answering the same onboarding questions. Instead of architecting solutions and mentoring, they\'re stuck in repetitive tasks.',
+        icon: 'tabler:user-exclamation',
       },
       {
-        title: 'Slow Code Generation',
-        description: 'Code generation is still mostly manual, slowing down even simple implementations',
-        icon: 'tabler:tool',
+        title: 'Quality vs. Speed Tradeoff',
+        description: 'Under pressure, your team cuts corners—skipping tests, rushing code reviews, postponing refactoring. You ship faster but accumulate technical debt. Or you maintain quality but miss market windows. You shouldn\'t have to choose.',
+        icon: 'tabler:scale',
       },
       {
-        title: 'AI Strategy Paralysis',
-        description: 'Your team knows AI exists but has no proven framework to implement it safely',
-        icon: 'tabler:alert-circle',
-      },
-      {
-        title: 'Falling Behind',
-        description: "While you're debating AI strategy, competitors are already shipping faster",
+        title: 'Scaling Challenges',
+        description: 'Adding developers doesn\'t proportionally increase output. New hires take weeks to contribute. Code reviews become bottlenecks. Communication overhead grows. Your team size increases but velocity plateaus.',
         icon: 'tabler:trending-down',
+      },
+      {
+        title: 'Production Surprises',
+        description: 'Issues that should have been caught in development appear in production—performance problems, security vulnerabilities, edge cases. Emergency fixes disrupt planned work and erode customer trust.',
+        icon: 'tabler:alert-triangle',
+      },
+      {
+        title: 'Technical Debt Spiral',
+        description: 'Shortcuts taken under pressure compound. Each release gets harder. Velocity decreases over time. Refactoring becomes too scary to attempt.',
+        icon: 'tabler:spiral',
       },
     ]}
   />
@@ -198,32 +84,37 @@ const metadata = {
     id="solutions"
     tagline=""
     title="AI-Powered Development That Actually Works in Production"
-    subtitle=""
+    subtitle="The proven framework that eliminates bottlenecks and transforms how your team builds software"
     items={[
       {
-        title: 'Automated Code Generation',
-        description: 'From specifications to working code in minutes, not hours',
+        title: 'Accelerate Feature Delivery',
+        description: 'Automate the grunt work that slows you down. Generate boilerplate code in minutes, create comprehensive tests instantly, and get AI code reviews in seconds. Your team focuses on building features, not fighting process.',
         icon: 'tabler:rocket',
       },
       {
-        title: 'AI-Powered Code Review',
-        description: 'Catch issues before human reviewers even see the code',
-        icon: 'tabler:search',
+        title: 'Free Up Senior Developer Time',
+        description: 'AI handles code reviews for syntax, patterns, and common issues. Tests generate automatically. New engineers get answers from AI agents instead of interrupting seniors. Your best talent focuses on architecture, mentoring, and solving hard problems.',
+        icon: 'tabler:users',
       },
       {
-        title: 'Instant Test Generation',
-        description: 'API and E2E tests generated automatically from your specs',
+        title: 'Ship Fast Without Sacrificing Quality',
+        description: 'Stop choosing between speed and quality. AI-generated tests ensure comprehensive coverage in minutes. Automated code reviews catch bugs, performance issues, and security vulnerabilities before merge. Ship with confidence, not anxiety.',
         icon: 'tabler:bolt',
       },
       {
-        title: 'Auto-Documentation',
-        description: 'Keep docs current without developer overhead',
-        icon: 'tabler:book',
+        title: 'Scale Your Team Effectively',
+        description: 'New engineers deliver their first feature in days, not weeks—AI agents guide them through the codebase with up-to-date knowledge. Code reviews happen instantly without bottlenecking on senior developers. Adding team members actually increases velocity.',
+        icon: 'tabler:trending-up',
       },
       {
-        title: 'Proven Integration Process',
-        description: "Safe rollout that won't disrupt your current workflow",
-        icon: 'tabler:check',
+        title: 'Catch Issues Before Production',
+        description: 'AI code review identifies performance problems, security vulnerabilities, and edge cases during development. Comprehensive automated tests validate functionality. Issues get fixed when they\'re cheap, not when they\'re urgent.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'Make Refactoring Continuous',
+        description: 'With comprehensive test coverage generated automatically, refactoring becomes safe and routine. Technical debt gets paid down during normal development cycles instead of requiring dedicated sprints. Your codebase improves continuously.',
+        icon: 'tabler:refresh',
       },
     ]}
   >
