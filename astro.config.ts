@@ -23,8 +23,7 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 
 export default defineConfig({
   output: 'static',
-  site: 'https://rparaschak.github.io/extrabrain.dev',
-  base: '/extrabrain.dev',
+  site: 'https://extrabrain.dev',
 
   integrations: [
     tailwind({
