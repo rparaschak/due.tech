@@ -4,6 +4,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import FreeConsultationCTA from '~/components/ui/FreeConsultationCTA.astro';
@@ -37,7 +38,6 @@ const metadata = {
       </div>
     </Fragment>
   </Hero>
-  git status
 
   <Features
     id="problems"
@@ -124,6 +124,55 @@ const metadata = {
       </p>
     </Fragment>
   </Features>
+
+  <!-- How It Works Widget ************ -->
+
+  <Steps
+    id="how-it-works"
+    title="How It Works: Your 8-12 Week AI Transformation"
+    subtitle="The exact timeline depends on your team's availability and sprint schedule. Here's how we transform your development process, step by step."
+    classes={{
+      container: 'max-w-3xl mx-auto',
+    }}
+    items={[
+      {
+        title: '#1 Discovery & Foundation',
+        description: `
+          Understand your unique challenges, identify high-impact targets, educate your team on AI fundamentals, and ship the first AI-assisted solution together.
+          <br/><br/>
+          <strong>Key Milestone:</strong> Team confident with AI basics + first quick win achieved.
+        `,
+        icon: 'tabler:map',
+      },
+      {
+        title: '#2 Tackle Your Biggest Bottleneck',
+        description: `
+          Attack your biggest bottleneck with intensive training and hands-on implementation. Your team learns the workflow and starts applying it to real features. Daily support ensures momentum and addresses challenges as they arise.
+          <br/><br/>
+          <strong>Key Milestone:</strong> Team independently uses AI for your priority target (e.g., generating tests for new features). Process is proven and repeatable.
+        `,
+        icon: 'tabler:target',
+      },
+      {
+        title: '#3 Scale to Second Target',
+        description: `
+          Apply the proven approach to your second target. Team tackles both new and legacy code with growing confidence. Document your processes and best practices.
+          <br/><br/>
+          <strong>Key Milestone:</strong> Team operates confidently with AI across multiple use cases. Workflow integrated into daily development.
+        `,
+        icon: 'tabler:chart-line',
+      },
+      {
+        title: '#4 Optimize & Hand Off',
+        description: `
+          Refine based on real usage patterns, conduct final retrospective, deliver comprehensive documentation, and create roadmap for continued improvement—including tackling legacy code and expanding coverage.
+          <br/><br/>
+          <strong>Key Milestone:</strong> Self-sufficient team with proven workflow, clear next steps, and ability to continue improvement independently.
+        `,
+        icon: 'tabler:circle-check',
+      },
+    ]}
+  />
 
   <!-- Results Comparison Widget ****** -->
 
