@@ -90,33 +90,23 @@ const metadata = {
     items={[
       {
         title: 'Accelerate Feature Delivery',
-        description: 'Automate the grunt work that slows you down. Generate boilerplate code in minutes, create comprehensive tests instantly, and get AI code reviews in seconds. Your team focuses on building features, not fighting process.',
+        description: 'Outsource AI-capable work to AI. Generate production-ready code, create data models, and build API endpoints in minutes instead of hours. Your engineers spend time on business logic and what matters to customers—not repetitive coding tasks.',
         icon: 'tabler:rocket',
       },
       {
-        title: 'Free Up Senior Developer Time',
-        description: 'AI handles code reviews for syntax, patterns, and common issues. Tests generate automatically. New engineers get answers from AI agents instead of interrupting seniors. Your best talent focuses on architecture, mentoring, and solving hard problems.',
-        icon: 'tabler:users',
+        title: 'Automate Test Coverage',
+        description: 'Generate comprehensive test suites in minutes, not hours. Achieve 80%+ coverage consistently without the time investment. Tests don\'t get skipped under roadmap pressure when they\'re this fast to create.',
+        icon: 'tabler:checklist',
       },
       {
-        title: 'Ship Fast Without Sacrificing Quality',
-        description: 'Stop choosing between speed and quality. AI-generated tests ensure comprehensive coverage in minutes. Automated code reviews catch bugs, performance issues, and security vulnerabilities before merge. Ship with confidence, not anxiety.',
-        icon: 'tabler:bolt',
+        title: 'Get Instant, In-Depth Code Reviews',
+        description: 'AI reviews analyze your code in seconds—checking guidelines, performance issues, security vulnerabilities, and potential bugs. Get feedback in minutes instead of waiting days. Quality gates happen instantly, not when reviewers have time.',
+        icon: 'tabler:eye-check',
       },
       {
-        title: 'Scale Your Team Effectively',
-        description: 'New engineers deliver their first feature in days, not weeks—AI agents guide them through the codebase with up-to-date knowledge. Code reviews happen instantly without bottlenecking on senior developers. Adding team members actually increases velocity.',
+        title: 'Scale Your Team Efficiently',
+        description: 'New engineers deliver their first feature in days, not weeks. AI agents answer questions instantly—senior developers stay focused on their work. Code reviews happen instantly without bottlenecking senior developers. Adding team members increases velocity instead of creating coordination overhead.',
         icon: 'tabler:trending-up',
-      },
-      {
-        title: 'Catch Issues Before Production',
-        description: 'AI code review identifies performance problems, security vulnerabilities, and edge cases during development. Comprehensive automated tests validate functionality. Issues get fixed when they\'re cheap, not when they\'re urgent.',
-        icon: 'tabler:shield-check',
-      },
-      {
-        title: 'Make Refactoring Continuous',
-        description: 'With comprehensive test coverage generated automatically, refactoring becomes safe and routine. Technical debt gets paid down during normal development cycles instead of requiring dedicated sprints. Your codebase improves continuously.',
-        icon: 'tabler:refresh',
       },
     ]}
   >
@@ -126,6 +116,42 @@ const metadata = {
       </p>
     </Fragment>
   </Features>
+
+  <!-- What Can Your Team Achieve Widget *** -->
+
+  <Features2
+    title="What Can Your Team Achieve with AI?"
+    subtitle="From generating production-ready code to comprehensive test suites and in-depth reviews—here's what becomes possible when you integrate AI into your development workflow."
+    columns={3}
+    classes={{
+      items: {
+        icon: 'text-white bg-primary rounded-full w-12 h-12 p-3 mb-6',
+      },
+    }}
+    items={[
+      {
+        title: 'Code Generation',
+        description: `
+          <p>Build API endpoints, implement business logic, create jobs and event handlers—AI handles the structure and boilerplate while your team focuses on the unique business requirements. Almost any repetitive coding task can be automated.</p>
+        `,
+        icon: 'tabler:code',
+      },
+      {
+        title: 'Test Automation',
+        description: `
+          <p>Generate unit tests, API tests, and end-to-end tests in minutes instead of hours. Achieve 85-95% coverage consistently without the time investment that usually makes thorough testing impractical under deadline pressure.</p>
+        `,
+        icon: 'tabler:checklist',
+      },
+      {
+        title: 'Intelligent Code Review',
+        description: `
+          <p>AI reviews validate acceptance criteria from your bug tracking system, identify security vulnerabilities, flag performance issues, enforce coding guidelines, and spot potential bugs—all in seconds, not days.</p>
+        `,
+        icon: 'tabler:shield-check',
+      },
+    ]}
+  />
 
   <!-- How It Works Widget ************ -->
 
