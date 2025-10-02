@@ -192,7 +192,7 @@ const metadata = {
   description: 'Page description',
   robots: { index: true, follow: true },
   openGraph: {
-    images: [{ url: '~/assets/images/og-image.jpg' }],
+    images: [{ url: '~/assets/images/og-image.png' }],
   },
 };
 ```
