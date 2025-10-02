@@ -10,11 +10,25 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import FreeConsultationCTA from '~/components/ui/FreeConsultationCTA.astro';
 import Button from '~/components/ui/Button.astro';
 import av1 from '~/assets/images/av1.jpg';
+import ogImage from '~/assets/images/og-image.png';
 
 const metadata = {
   title: 'Extra Brain - AI Development Consulting for Engineering Teams',
   description: 'AI development consulting for engineering teams. Learn battle-tested workflows for code generation, automated testing, and AI-powered reviews.',
   ignoreTitleTemplate: true,
+  openGraph: {
+    type: 'website',
+    url: 'https://extrabrain.dev/',
+    title: 'Extra Brain - AI Development Consulting for Engineering Teams',
+    description: 'AI development consulting for engineering teams. Learn battle-tested workflows for code generation, automated testing, and AI-powered reviews. CTO-to-CTO guidance, no hype.',
+    images: [
+      {
+        url: ogImage.src,
+        width: ogImage.width,
+        height: ogImage.height,
+      },
+    ],
+  },
 };
 ---
 
