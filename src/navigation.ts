@@ -40,6 +40,8 @@ export const footerData = {
     },
   ],
   secondaryLinks: [],
-  socialLinks: [],
+  socialLinks: [
+    { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/in/rparashchak/' },
+  ],
   footNote: ``,
 };
