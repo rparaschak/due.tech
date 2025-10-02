@@ -24,10 +24,10 @@ export const headerData = {
     //     },
     //   ],
     // },
-    // {
-    //   text: 'Blog',
-    //   href: getBlogPermalink(),
-    // },
+    {
+      text: 'Blog',
+      href: getBlogPermalink(),
+    },
   ],
   actions: [],
 };
