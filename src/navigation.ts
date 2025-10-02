@@ -41,7 +41,5 @@ export const footerData = {
   ],
   secondaryLinks: [],
   socialLinks: [],
-  footNote: `
-    Built with AstroWind template · All rights reserved.
-  `,
+  footNote: ``,
 };

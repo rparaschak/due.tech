@@ -9,6 +9,7 @@ import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import FreeConsultationCTA from '~/components/ui/FreeConsultationCTA.astro';
 import Button from '~/components/ui/Button.astro';
+import av1 from '~/assets/images/av1.jpg';
 
 const metadata = {
   title: 'Welcome to Your Landing Page',
@@ -159,25 +160,84 @@ const metadata = {
     id="how-it-works"
     title="How It Works: Your 8-12 Week AI Transformation"
     subtitle="The exact timeline depends on your team's availability and sprint schedule. Here's how we transform your development process, step by step."
-    classes={{
-      container: 'max-w-3xl mx-auto',
-    }}
+    image={`
+      <div class="sticky top-24 bg-white dark:bg-slate-900 p-8 rounded-lg shadow-xl border border-gray-200 dark:border-slate-800">
+        <h3 class="text-2xl font-bold mb-6 text-primary dark:text-gray-200">Program Overview</h3>
+        <div class="space-y-4">
+          <div class="flex items-start">
+            <div class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center mr-3">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <div>
+              <div class="font-semibold text-default">Timeline</div>
+              <div class="text-muted">8-12 weeks</div>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center mr-3">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+              </svg>
+            </div>
+            <div>
+              <div class="font-semibold text-default">Format</div>
+              <div class="text-muted">Weekly workshops + ongoing support</div>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center mr-3">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+            </div>
+            <div>
+              <div class="font-semibold text-default">Your team does</div>
+              <div class="text-muted">Implementation</div>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center mr-3">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+              </svg>
+            </div>
+            <div>
+              <div class="font-semibold text-default">I provide</div>
+              <div class="text-muted">Training, framework, guidance, reviews</div>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div class="flex-shrink-0 w-8 h-8 bg-accent rounded-full flex items-center justify-center mr-3">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <div>
+              <div class="font-semibold text-default">End result</div>
+              <div class="text-muted">Self-sufficient team with proven AI workflows</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `}
     items={[
       {
         title: '#1 Discovery & Foundation',
         description: `
-          Understand your unique challenges, identify high-impact targets, and train your team on AI fundamentals through workshops and demonstrations. Your team ships their first AI-assisted solution.
+          Understand your unique challenges and identify the highest-impact bottleneck to tackle first. Train your team on AI fundamentals through workshops and demonstrations. Align on the attack plan and equip your team with the foundation to start solving it.
           <br/><br/>
-          <strong>Key Milestone:</strong> Team confident with AI basics + first quick win achieved.
+          <strong>Key Milestone:</strong> High-impact target identified + team ready to tackle it.
         `,
         icon: 'tabler:map',
       },
       {
-        title: '#2 Tackle Your Biggest Bottleneck',
+        title: '#2 Solve Your Biggest Bottleneck',
         description: `
           Intensive training on your priority target through workshops, live demos, and practical examples. Your team implements the workflow on real features while I answer questions and help navigate challenges that arise.
           <br/><br/>
-          <strong>Key Milestone:</strong> Team independently uses AI for your priority target (e.g., generating tests for new features). Process is proven and repeatable.
+          <strong>Key Milestone:</strong> Team independently uses AI for the priority target with a proven, repeatable process.
         `,
         icon: 'tabler:target',
       },
@@ -186,7 +246,7 @@ const metadata = {
         description: `
           Train your team on the second target using the proven framework. Your team applies AI across both new and legacy code. We document processes and best practices together.
           <br/><br/>
-          <strong>Key Milestone:</strong> Team operates confidently with AI across multiple use cases. Workflow integrated into daily development.
+          <strong>Key Milestone:</strong> Team operates confidently with AI across multiple use cases in daily development.
         `,
         icon: 'tabler:chart-line',
       },
@@ -195,136 +255,91 @@ const metadata = {
         description: `
           Review real usage patterns and conduct final retrospective. Deliver comprehensive documentation and create a roadmap for continued improvement—including strategies for tackling legacy code and expanding coverage.
           <br/><br/>
-          <strong>Key Milestone:</strong> Self-sufficient team with proven workflow, clear next steps, and ability to continue improvement independently.
+          <strong>Key Milestone:</strong> Self-sufficient team with clear roadmap for independent improvement.
         `,
         icon: 'tabler:circle-check',
       },
     ]}
   />
+  
 
-  <!-- Results Comparison Widget ****** -->
+  <!-- About Me Section ************ -->
 
-  <Features2
-    title="Real Results from Real Implementation"
-    columns={2}
-    items={[
-      {
-        title: 'Before AI Integration',
-        description: `
-          <div class="space-y-3">
-            <div class="flex items-center text-red-600">
-              <span class="mr-2">✗</span>
-              <span>8 hours writing comprehensive tests</span>
-            </div>
-            <div class="flex items-center text-red-600">
-              <span class="mr-2">✗</span>
-              <span>2-day code review cycles</span>
-            </div>
-            <div class="flex items-center text-red-600">
-              <span class="mr-2">✗</span>
-              <span>Documentation always outdated</span>
-            </div>
-            <div class="flex items-center text-red-600">
-              <span class="mr-2">✗</span>
-              <span>Junior developers blocked on simple tasks</span>
-            </div>
-            <div class="flex items-center text-red-600">
-              <span class="mr-2">✗</span>
-              <span>Fear of refactoring existing code</span>
+  <div class="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-20">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl md:text-5xl font-bold tracking-tighter mb-4 font-heading">About Me</h2>
+      <p class="max-w-3xl mx-auto text-xl text-muted">While other consultants sell theory, I'm implementing these AI development practices in my company every day.</p>
+    </div>
+    <div class="md:flex md:gap-16">
+      <div class="md:basis-1/2 mb-12 md:mb-0">
+        <div class="space-y-6">
+          
+          <div class="flex items-start gap-4">
+            <div class="w-2 h-2 bg-accent rounded-full flex-shrink-0 mt-2"></div>
+            <div>
+              <h3 class="text-lg font-medium leading-6 text-default mb-1">AI Implementation</h3>
+              <p class="text-muted">Helping multiple companies establish AI workflows that work in production</p>
             </div>
           </div>
-        `,
-        icon: 'tabler:x',
-      },
-      {
-        title: 'After AI Implementation',
-        description: `
-          <div class="space-y-3">
-            <div class="flex items-center text-green-600">
-              <span class="mr-2">✓</span>
-              <span>30 minutes automated test generation</span>
-            </div>
-            <div class="flex items-center text-green-600">
-              <span class="mr-2">✓</span>
-              <span>Same-day automated + human review</span>
-            </div>
-            <div class="flex items-center text-green-600">
-              <span class="mr-2">✓</span>
-              <span>Auto-updated with code changes</span>
-            </div>
-            <div class="flex items-center text-green-600">
-              <span class="mr-2">✓</span>
-              <span>AI-assisted independent work</span>
-            </div>
-            <div class="flex items-center text-green-600">
-              <span class="mr-2">✓</span>
-              <span>Fearless refactoring with automated safety nets</span>
+          <div class="flex items-start gap-4">
+            <div class="w-2 h-2 bg-accent rounded-full flex-shrink-0 mt-2"></div>
+            <div>
+              <h3 class="text-lg font-medium leading-6 text-default mb-1">Delivery Excellence</h3>
+              <p class="text-muted">Advising teams on Continuous Delivery adoption to improve software delivery processes</p>
             </div>
           </div>
-        `,
-        icon: 'tabler:check',
-      },
-    ]}
-  >
-    <Fragment slot="subtitle">
-      <p class="text-xl text-center text-primary font-semibold">
-        Development velocity increased while quality improved
-      </p>
-    </Fragment>
-  </Features2>
-
-  <!-- Credibility Section ************ -->
-
-  <Content
-    title="Why Listen to Me?"
-    content="While other consultants sell theory, I'm implementing these AI development practices in my own startup every day. I've managed 12-person engineering teams, passed multiple investor due diligences, and now I'm proving these methods work at scale."
-    items={[
-      {
-        title: 'Currently:',
-        description: "Building [Your Startup] using the exact AI workflow I'll teach your team",
-      },
-      {
-        title: '15 years experience:',
-        description: 'From individual contributor to CTO',
-      },
-      {
-        title: 'Proven track record:',
-        description: 'Successfully guided teams through multiple funding rounds',
-      },
-      {
-        title: 'Team leadership:',
-        description: 'Managed 12-person engineering teams',
-      },
-    ]}
-    image={{
-      src: '~/assets/images/placeholder-photo.jpg',
-      alt: 'Professional Photo',
-      width: 400,
-      height: 500,
-    }}
-  >
-    <Fragment slot="content">
-      <p class="text-xl italic text-center mb-6 text-muted">
-        "I'm not just teaching this - I'm living it daily as a CTO"
-      </p>
-      <p class="text-lg text-muted">
-        While other consultants sell theory, I'm implementing these AI development practices in my own startup every
-        day. I've managed 12-person engineering teams, passed multiple investor due diligences, and now I'm proving
-        these methods work at scale.
-      </p>
-    </Fragment>
-  </Content>
+          <div class="flex items-start gap-4">
+            <div class="w-2 h-2 bg-accent rounded-full flex-shrink-0 mt-2"></div>
+            <div>
+              <h3 class="text-lg font-medium leading-6 text-default mb-1">Battle-Tested Approach</h3>
+              <p class="text-muted">Every workflow I teach is one I use daily in my own company</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-2 h-2 bg-accent rounded-full flex-shrink-0 mt-2"></div>
+            <div>
+              <h3 class="text-lg font-medium leading-6 text-default mb-1">No-Hype Methodology</h3>
+              <p class="text-muted">Skeptical of trends until proven. I diagnose real bottlenecks before recommending solutions—blind AI adoption makes things worse.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="md:basis-1/2">
+        <div class="flex flex-col">
+          <div class="mb-8">
+            <p class="text-lg text-default leading-relaxed">
+              I'm a software engineer who's spent 15 years in various leadership positions, currently serving as CTO at Agewise. I've built teams, scaled organizations, and helped multiple companies adopt better development practices. The AI workflows I teach? I've implemented them in real production environments and seen them work at scale.
+            </p>
+          </div>
+          <div class="grid grid-cols-3 gap-4">
+            <div class="text-center py-6 border-r border-gray-200 dark:border-gray-700">
+              <div class="text-4xl font-bold text-accent mb-2">15+</div>
+              <div class="text-sm text-muted uppercase tracking-wide">Years Experience</div>
+            </div>
+            <div class="text-center py-6 border-r border-gray-200 dark:border-gray-700">
+              <div class="text-4xl font-bold text-accent mb-2">10+</div>
+              <div class="text-sm text-muted uppercase tracking-wide">Companies Advised</div>
+            </div>
+            <div class="text-center py-6">
+              <div class="text-4xl font-bold text-accent mb-2">Zero</div>
+              <div class="text-sm text-muted uppercase tracking-wide">Hype Approach</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- CallToAction Widget *********** -->
 
   <CallToAction>
-    <Fragment slot="title"> Ready to Build Something Amazing? </Fragment>
+    <Fragment slot="title"> Ready to Transform Your Development Process? </Fragment>
 
-    <Fragment slot="subtitle"> Start customizing this template with your own content and make it your own. </Fragment>
+    <Fragment slot="subtitle"> Let's discuss your team's biggest bottlenecks and create a plan to solve them with battle-tested AI workflows. </Fragment>
 
     <Fragment slot="actions">
       <div class="flex w-full sm:w-auto">
-        <FreeConsultationCTA class="w-full sm:mb-0" />
+        <Button variant="primary" text="Book a Discovery Call" href="#contact" class="w-full sm:mb-0" />
       </div>
     </Fragment>
   </CallToAction>
