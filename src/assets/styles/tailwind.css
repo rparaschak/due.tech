@@ -26,11 +26,11 @@
   }
 
   .btn-primary {
-    @apply btn font-semibold bg-primary text-white border-primary hover:bg-secondary hover:border-secondary hover:text-white dark:text-white dark:bg-primary dark:border-primary dark:hover:border-secondary dark:hover:bg-secondary;
+    @apply btn font-semibold bg-accent text-white border-accent hover:bg-accent-dark hover:border-accent-dark hover:text-white dark:text-white dark:bg-accent dark:border-accent dark:hover:bg-accent-dark dark:hover:border-accent-dark;
   }
 
   .btn-secondary {
-    @apply btn;
+    @apply btn hover:bg-secondary-dark hover:border-secondary-dark hover:text-white dark:hover:bg-secondary-dark dark:hover:border-secondary-dark dark:hover:text-white;
   }
 
   .btn-tertiary {

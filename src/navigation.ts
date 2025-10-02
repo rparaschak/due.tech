@@ -29,7 +29,7 @@ export const headerData = {
       href: getBlogPermalink(),
     },
   ],
-  actions: [{ text: 'Get Started', href: '#', target: '_self' }],
+  actions: [],
 };
 
 export const footerData = {
@@ -40,7 +40,7 @@ export const footerData = {
     },
   ],
   secondaryLinks: [],
-  socialLinks: [{ ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') }],
+  socialLinks: [],
   footNote: `
     Built with AstroWind template · All rights reserved.
   `,
