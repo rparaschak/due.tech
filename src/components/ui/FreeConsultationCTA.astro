@@ -3,7 +3,6 @@ import Button from '~/components/ui/Button.astro';
 
 const {
   variant = 'primary',
-  icon = 'tabler:calendar',
   href = '#contact',
   class: className = '',
   ...rest
@@ -12,8 +11,7 @@ const {
 
 <Button
   variant={variant}
-  text="Get Your AI Readiness Assessment"
-  icon={icon}
+  text="Book a Discovery Call"
   href={href}
   class={`whitespace-nowrap ${className}`}
   {...rest}

@@ -14,6 +14,7 @@ import Note from '~/components/widgets/Note.astro';
 import BlogExampleSection from '~/components/widgets/BlogExampleSection.astro';
 import BlogQuote from '~/components/widgets/BlogQuote.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import FreeConsultationCTA from '~/components/ui/FreeConsultationCTA.astro';
 
 Some people are speculating about the AI bubble bursting. But what does that even mean? The models will get dumber? Slower? Stop existing? I think they mean the hype will fade, the funding will dry up, the growth will slow down. They're missing the point.
 
@@ -78,19 +79,14 @@ Start small. Start today. Start with one workflow that matters. Because the mode
 
 ---
 
-<CallToAction
-  actions={[
-    {
-      variant: 'primary',
-      text: 'Book Free Consultation',
-      href: '#contact',
-      icon: 'tabler:calendar',
-    },
-  ]}
->
+<CallToAction>
   <Fragment slot="title">Ready to Adopt AI Strategically?</Fragment>
 
   <Fragment slot="subtitle">
     Let's talk about how to prepare your team for AI adoption. No sales pitch. Just practical advice from someone who's done it.
+  </Fragment>
+
+  <Fragment slot="actions">
+    <FreeConsultationCTA />
   </Fragment>
 </CallToAction>
