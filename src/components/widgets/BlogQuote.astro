@@ -1,0 +1,13 @@
+---
+export interface Props {
+  quote?: string;
+}
+
+const {
+  quote = await Astro.slots.render('quote'),
+} = Astro.props;
+---
+
+<blockquote class="border-l-4 border-accent pl-4 my-6 italic text-lg not-prose">
+  <p class="before:content-none after:content-none" set:html={quote} />
+</blockquote>

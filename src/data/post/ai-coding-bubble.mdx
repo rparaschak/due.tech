@@ -11,20 +11,11 @@ draft: false
 ---
 
 import Note from '~/components/widgets/Note.astro';
+import BlogExampleSection from '~/components/widgets/BlogExampleSection.astro';
+import BlogQuote from '~/components/widgets/BlogQuote.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 Some people are speculating about the AI bubble bursting. But what does that even mean? The models will get dumber? Slower? Stop existing? I think they mean the hype will fade, the funding will dry up, the growth will slow down. They're missing the point.
-
-## The Problem Isn't Model Performance
-
-The problem isn't whether Claude 5 will be better than Claude 4. It will be. The problem is that most companies aren't even using what's available right now. With today's models, you can automate work that was impossible five years ago. Or possible only with massive teams and budgets.
-
-<Note
-  title="Real Example from My Client"
-  description="They hired two people to manually scrape websites, collect data, and enter it into their system through web forms. The data was unstructured, so traditional automation didn't work well enough. Their throughput? 6-8 items per hour.<br/><br/>We built an AI agent that processes 50 items per hour. Could do more, but validation became the bottleneck. Now those two people just validate instead of doing data entry. Throughput jumped to 40 items per hour.<br/><br/>That's a 5x boost. For pennies in compute costs."
-/>
-
-The tech was already there. They just weren't using it.
 
 ## LLMs Aren't Going Anywhere
 
@@ -36,36 +27,45 @@ Some people worry that what we adopt today won't be relevant because new models 
 
 Every new model generation brings more thinking capability, better instruction following, faster inference, lower costs. Security is improving. You can use big cloud providers or keep everything in your isolated environment. LLMs are here to stay. You have no choice but to learn how to live with them.
 
-## Many Companies Are Getting This Wrong
+## The Problem Isn't Model Performance
 
-I see two patterns in the market. Companies refusing to adopt – they tried AI once, it didn't work, so they decided it's all hype. And companies adopting badly – they bought the shiniest tools, gave everyone access, and wondered why nothing improved. Both approaches lose.
+The problem isn't whether Claude 5 will be better than Claude 4. It will be. The problem is that most companies aren't even using what's available right now. With today's models, you can automate work that was impossible five years ago. Or possible only with massive teams and budgets.
 
-<Note
-  title="How We Use AI in My Company"
-  description="We use AI heavily for software development. One thing that works well is automated testing. We have an AI agent that generates tests for our API and MCP endpoints. It covers the happy path cases. We spend minutes reviewing them instead of hours writing them. This is just one of many workflows where AI makes a real difference for us."
+<BlogExampleSection
+  title="Real Example"
+  description="My client hired two people to manually scrape websites, collect data, and enter it into their system through web forms. The challenge wasn't the scraping itself—it was categorizing and labeling unstructured data. Traditional automation couldn't handle the variability. Their throughput? 6-8 items per hour.<br/><br/>Today, with AI handling the categorization and labeling, the system processes 50 items per hour. Validation is now the bottleneck. Those two people just validate instead of doing the heavy lifting. Throughput jumped to 40 items per hour.<br/><br/><strong>Takeaway:</strong> 5x boost. The tech was already there. They just weren't using it."
 />
-
-But we didn't start there. We had to do groundwork first.
 
 ## What DORA 2025 Actually Tells Us
 
 The DORA Report 2025 reveals something uncomfortable. While AI boosts throughput, software delivery stability continues to decline. The gap between high-performing and struggling teams isn't just staying the same—AI is actively widening it.
 
-Here's the key insight: "AI magnifies the strengths of high-performing organizations and the dysfunctions of struggling ones."
+<BlogQuote quote="AI magnifies the strengths of high-performing organizations and the dysfunctions of struggling ones." />
 
-Read that again. AI doesn't fix broken teams. It makes them worse. If your processes are chaotic, AI adds chaos faster. If your communication is bad, AI helps you miscommunicate at scale. Better models will only widen this gap further.
+AI doesn't fix broken teams. It makes them worse. If your processes are chaotic, AI adds chaos faster. If your communication is bad, AI helps you miscommunicate at scale. Better models will only widen this gap further.
 
-## You Have Three Options
+## Many Companies Are Getting This Wrong
+
+I see two patterns in the market. Companies refusing to adopt – they tried AI once, it didn't work, so they decided it's all hype. And companies adopting badly – they bought the shiniest tools, gave everyone access, and wondered why nothing improved. Both approaches lose.
+
+<BlogExampleSection
+  title="Real Example"
+  description="We use AI to generate tests for our API and MCP endpoints. We spend minutes reviewing them instead of hours writing them. This is just one of many workflows where AI makes a real difference for us.<br/><br/>AI didn't magically solve our problem. Testing was a significant bottleneck for us. We had to make it work through trial and error, through examples, through guidelines."
+/>
+
+## You Have One Real Option
+
+Adopt it strategically. Do the groundwork first. Start small. Prove value. Scale what works. This is the only path that actually leads somewhere good.
+
+**The alternatives don't work.**
 
 **Give AI to a dysfunctional team.** Watch your problems multiply. Faster code reviews won't help if you're reviewing the wrong things. Faster code generation won't matter if you're building the wrong features.
 
 **Ignore AI entirely.** Lose competitive advantage to companies that figure it out. While you're debating whether AI is hype, your competitors are shipping faster, learning faster, and pulling ahead.
 
-**Adopt it strategically.** Do the groundwork first. Start small. Prove value. Scale what works. This is the only path that actually leads somewhere good.
-
-<Note
-  title="Our Productivity Gains"
-  description="In my company, we have significant productivity gains. But they didn't happen because we bought the best tools. They happened because we applied them systematically, step by step, through trial and error. At this point, we can't imagine our workflow without AI assistance."
+<BlogExampleSection
+  title="Real Example"
+  description="In my company, we have significant productivity gains. But they didn't happen because we bought the best tools. They happened because we applied them systematically, step by step, through trial and error. At this point, we can't imagine our workflow without AI assistance.<br/><br/><strong>Takeaway:</strong> Start small. Start today. Start with one workflow that matters."
 />
 
 ## The Real Question
