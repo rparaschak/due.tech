@@ -1,0 +1,50 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import type { Presentation } from '~/types';
+
+const metadata = {
+  title: 'Presentations',
+  description: 'Browse all presentations',
+};
+
+// Define presentations array - this will be manually maintained for now
+const presentations: Presentation[] = [
+  {
+    id: 'coding-agents-101',
+    slug: 'coding-agents-101',
+    permalink: '/presentations/coding-agents-101',
+    title: 'Coding Agents 101: Foundation and Mindset',
+    description: 'An introduction to coding agents and the foundational mindset needed to work effectively with AI-powered development tools.',
+  },
+  {
+    id: 'unit-testing-frontend-with-ai',
+    slug: 'unit-testing-frontend-with-ai',
+    permalink: '/presentations/unit-testing-frontend-with-ai',
+    title: 'Unit Testing Frontend with AI',
+    description: 'AI-Assisted Unit Testing for Frontend Teams - The Fastest Path to Test Coverage That Matters',
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <div class="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-20">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tighter mb-4 font-heading">Presentations</h1>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {
+        presentations.map((presentation) => (
+          <a
+            href={presentation.permalink}
+            class="block p-6 bg-white dark:bg-slate-800 rounded-lg shadow-lg border border-gray-200 dark:border-slate-700 hover:bg-secondary-dark hover:border-secondary-dark dark:hover:bg-secondary-dark dark:hover:border-secondary-dark transition-all duration-200"
+          >
+            <h2 class="text-xl font-bold text-default dark:text-slate-300 hover:text-white dark:hover:text-white transition ease-in duration-200">
+              {presentation.title}
+            </h2>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</Layout>

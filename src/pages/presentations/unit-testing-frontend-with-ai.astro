@@ -1,0 +1,211 @@
+---
+import PresentationLayout from '~/layouts/PresentationLayout.astro';
+
+const metadata = {
+  title: 'Unit Testing Frontend with AI',
+  description:
+    'AI-Assisted Unit Testing for Frontend Teams - The Fastest Path to Test Coverage That Matters',
+  ignoreTitleTemplate: false,
+};
+---
+
+<PresentationLayout metadata={metadata}>
+  <section data-state="title" class="title-slide">
+    <h1>Unit Testing Frontend with AI</h1>
+    <h2>The Fastest Path to Test Coverage That Matters</h2>
+  </section>
+
+  <section>
+    <h2>The Refactoring Nightmare</h2>
+    <h3>Can you afford refactoring every sprint? Maybe even every day?</h3>
+    <div style="margin-top: 2rem;">
+      <p class="fragment" style="font-size: 1.3rem; font-weight: 700; color: #f0c36d; margin-bottom: 2rem;">
+        If you don't have tests - probably not.
+      </p>
+
+      <div class="fragment" style="margin-bottom: 2rem;">
+        <p style="font-weight: 600; margin-bottom: 1rem;">The questions that stop you:</p>
+        <ul class="red-bullets">
+          <li>If I change this component, won't it cascade?</li>
+          <li>Will removing this weird if statement break something elsewhere?</li>
+          <li>If I touch this hook, what else breaks?</li>
+        </ul>
+      </div>
+
+      <div class="fragment" style="border: 2px solid #ef4444; border-radius: 12px; padding: 1.5rem; background: rgba(239, 68, 68, 0.15); margin-top: 2rem;">
+        <p style="display: flex; align-items: center; gap: 0.5rem; margin: 0; font-size: 1.2rem;">
+          <span style="font-size: 1.5rem;">❌</span>
+          <strong>So you don't refactor.</strong> Tech debt piles up. Code gets messier. The problem gets worse.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>The Feature Development Trap</h2>
+    <h3>Even easier scenario:</h3>
+    <div style="margin-top: 2rem;">
+      <div class="fragment" style="margin-bottom: 2rem;">
+        <ul class="red-bullets">
+          <li>Changing a feature in one place breaks another</li>
+          <li>Fixing one bug creates another one</li>
+        </ul>
+      </div>
+
+      <div class="fragment" style="margin-bottom: 2rem;">
+        <p style="font-weight: 600; margin-bottom: 1rem;">The result:</p>
+        <ul>
+          <li>Production bugs that could've been caught</li>
+          <li>Code that nobody <em>dares</em> to improve</li>
+          <li>Delivery slows down because everything feels fragile</li>
+        </ul>
+      </div>
+
+      <div class="fragment" style="border: 2px solid #0ea5c1; border-radius: 12px; padding: 1.5rem; background: rgba(14, 165, 193, 0.15); margin-top: 2rem;">
+        <p style="display: flex; align-items: center; gap: 0.5rem; margin: 0; font-size: 1.3rem;">
+          <span style="font-size: 1.5rem;">🤔</span>
+          <strong>Sound familiar?</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Agenda</h2>
+    <ul>
+      <li>Why Unit Tests?</li>
+      <li>Unit vs E2E Testing</li>
+      <li>What We Test (and Don't Test)</li>
+      <li>The Antipatterns</li>
+      <li>AI-Powered Unit Testing</li>
+      <li>Getting Started</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>What Unit Tests Actually Do</h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem;">
+      <div class="content-box">
+        <span class="content-box-icon">🚀</span>
+        <div class="content-box-content">
+          <h3>Fast Feedback</h3>
+          <p style="color: #a0aec0;">Milliseconds, not minutes. Catch bugs while coding, not in production.</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <span class="content-box-icon">🔄</span>
+        <div class="content-box-content">
+          <h3>Refactoring Confidence</h3>
+          <p style="color: #a0aec0;">Change architecture without fear. Tests tell you what broke.</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <span class="content-box-icon">🎯</span>
+        <div class="content-box-content">
+          <h3>Catch Obvious Bugs</h3>
+          <p style="color: #a0aec0;">Modal doesn't close after submit? Form accepts invalid data? Tests catch it.</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <span class="content-box-icon">💰</span>
+        <div class="content-box-content">
+          <h3>Economics</h3>
+          <p style="color: #a0aec0;">Testing everything with E2E is expensive. Time and compute add up fast.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Unit vs E2E: Choose Your Weapon</h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2rem; align-items: start;">
+      <div>
+        <h3>Unit Tests</h3>
+        <p style="font-weight: 600; margin-bottom: 1rem;">Question they answer:</p>
+        <p style="color: #a0aec0; margin-bottom: 1.5rem;">"Does this single piece do what it should?"</p>
+      </div>
+
+      <div>
+        <h3>E2E Tests</h3>
+        <p style="font-weight: 600; margin-bottom: 1rem;">Question they answer:</p>
+        <p style="color: #a0aec0; margin-bottom: 1.5rem;">"Does the whole flow work for users?"</p>
+      </div>
+    </div>
+
+    <table style="width: 100%; margin-top: 2rem; border-collapse: collapse;">
+      <thead>
+        <tr style="border-bottom: 2px solid #0ea5c1;">
+          <th style="text-align: left; padding: 0.75rem; color: #0ea5c1;">Characteristic</th>
+          <th style="text-align: left; padding: 0.75rem; color: #0ea5c1;">Unit Tests</th>
+          <th style="text-align: left; padding: 0.75rem; color: #0ea5c1;">E2E Tests</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom: 1px solid rgba(14, 165, 193, 0.3);">
+          <td style="padding: 0.75rem; font-weight: 600;">Speed</td>
+          <td style="padding: 0.75rem;">Milliseconds</td>
+          <td style="padding: 0.75rem;">Seconds to minutes</td>
+        </tr>
+        <tr style="border-bottom: 1px solid rgba(14, 165, 193, 0.3);">
+          <td style="padding: 0.75rem; font-weight: 600;">Scope</td>
+          <td style="padding: 0.75rem;">Single component/hook/function</td>
+          <td style="padding: 0.75rem;">Complete user journey</td>
+        </tr>
+        <tr style="border-bottom: 1px solid rgba(14, 165, 193, 0.3);">
+          <td style="padding: 0.75rem; font-weight: 600;">Setup</td>
+          <td style="padding: 0.75rem;">Mock data and dependencies</td>
+          <td style="padding: 0.75rem;">Real test data, database state</td>
+        </tr>
+        <tr>
+          <td style="padding: 0.75rem; font-weight: 600;">Feedback</td>
+          <td style="padding: 0.75rem;">Instant</td>
+          <td style="padding: 0.75rem;">Comprehensive but slow</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="border: 2px solid #0ea5c1; border-radius: 12px; padding: 1.5rem; background: rgba(14, 165, 193, 0.15); margin-top: 2rem;">
+      <p style="display: flex; align-items: center; gap: 0.5rem; margin: 0;">
+        <strong>Both give you:</strong> Refactoring confidence. Bug detection. Better delivery performance.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>The Balance</h2>
+    <h3 style="margin-bottom: 2rem;">The Rule: Everything that CAN be unit tested SHOULD be unit tested.</h3>
+
+    <p style="font-weight: 600; margin-bottom: 1.5rem;"><strong>What remains:</strong> E2E tests for critical user flows.</p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2rem; align-items: center;">
+      <!-- Pyramid on the left -->
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <!-- E2E Layer (top) -->
+        <div style="width: 100px; height: 40px; background: rgba(232, 180, 184, 0.4); border: 2px solid #e8b4b8; clip-path: polygon(25% 0%, 75% 0%, 100% 100%, 0% 100%); display: flex; align-items: center; justify-content: center; position: relative;">
+          <span style="font-weight: 600; color: rgb(229 236 246); z-index: 1; font-size: 0.8rem;">End to End</span>
+        </div>
+        <!-- Integration Layer (middle) -->
+        <div style="width: 200px; height: 50px; background: rgba(240, 195, 109, 0.4); border: 2px solid #f0c36d; clip-path: polygon(12.5% 0%, 87.5% 0%, 100% 100%, 0% 100%); display: flex; align-items: center; justify-content: center; margin-top: -2px;">
+          <span style="font-weight: 600; color: rgb(229 236 246); z-index: 1; font-size: 0.9rem;">Integration</span>
+        </div>
+        <!-- Unit Layer (bottom) -->
+        <div style="width: 300px; height: 60px; background: rgba(74, 222, 128, 0.4); border: 2px solid #4ade80; clip-path: polygon(8.33% 0%, 91.67% 0%, 100% 100%, 0% 100%); display: flex; align-items: center; justify-content: center; margin-top: -2px;">
+          <span style="font-weight: 600; font-size: 1rem; color: rgb(229 236 246); z-index: 1;">Unit</span>
+        </div>
+      </div>
+
+      <!-- Text on the right -->
+      <div>
+        <p style="font-weight: 600; margin-bottom: 1rem;">In practice when hunting for high-impact:</p>
+        <ul>
+          <li>E2E first for critical user paths</li>
+          <li>Then backfill with unit tests for components</li>
+          <li>This gets you safety now, speed later</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</PresentationLayout>

@@ -279,3 +279,22 @@ export interface Content extends Omit<Headline, 'classes'>, Widget {
 }
 
 export interface Contact extends Omit<Headline, 'classes'>, Form, Widget {}
+
+export interface Presentation {
+  /** A unique ID number that identifies a presentation. */
+  id: string;
+
+  /** A presentation's unique slug – part of the presentation's URL based on its name. */
+  slug: string;
+
+  /**  */
+  permalink: string;
+
+  /**  */
+  title: string;
+  /** Optional summary of presentation content. */
+  description?: string;
+
+  /**  */
+  metadata?: MetaData;
+}
