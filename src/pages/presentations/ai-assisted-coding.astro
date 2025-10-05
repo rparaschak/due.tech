@@ -1,0 +1,440 @@
+---
+import PresentationLayout from '~/layouts/PresentationLayout.astro';
+
+const metadata = {
+  title: 'AI-Assisted Coding: Foundation and Mindset',
+  description:
+    'Understanding the foundation and mindset needed to work effectively with AI-assisted coding tools.',
+  ignoreTitleTemplate: false,
+};
+---
+
+<PresentationLayout metadata={metadata}>
+  <!-- Slide 1: Title -->
+  <section data-state="title" class="title-slide">
+    <h1>AI-Assisted Coding</h1>
+    <h2>Foundation and Mindset</h2>
+  </section>
+
+  <!-- Slide 2: The DORA Reality -->
+  <section>
+    <div style="text-align: center;">
+      <blockquote style="font-size: 1.8rem; font-weight: 600; color: #0ea5c1; margin: 3rem auto; padding: 0; line-height: 1.4; max-width: 90%;">
+        "AI magnifies the strengths of high-performing organizations and the dysfunctions of struggling ones."
+      </blockquote>
+      <p style="font-size: 1.2rem; color: #a0aec0; margin-bottom: 3rem;">— DORA Report 2025</p>
+      <p style="font-size: 1.1rem; color: #e2e8f0; margin-top: 2rem;">
+        The gap between elite and struggling teams isn't staying the same.<br />
+        <strong style="color: #0ea5c1;">AI is actively widening it.</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- Slide 3: Agenda -->
+  <section>
+    <h2>Agenda</h2>
+    <ul>
+      <li>The Cost of Ignoring AI</li>
+      <li>AI on a Broken Foundation</li>
+      <li>Why Integrations Fail</li>
+      <li>Building the Foundation</li>
+      <li>Where to Start</li>
+      <li>Short Demo</li>
+    </ul>
+  </section>
+
+  <!-- Slide 4: What Happens If You Ignore AI -->
+  <section>
+    <h2>What Happens If You Ignore AI</h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem;">
+      <div>
+        <h3 style="display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+          <span>For Employees</span>
+          <span style="font-size: 1.5rem;">👤</span>
+        </h3>
+        <ul style="font-size: 0.95rem; color: #a0aec0;">
+          <li style="margin-bottom: 0.75rem;">
+            <strong style="color: #e2e8f0;">Competition intensifies</strong>
+          </li>
+          <li style="margin-bottom: 0.75rem;">
+            <strong style="color: #e2e8f0;">vs. AI-skilled peers</strong><br />
+            They ship faster, solve harder problems, get promoted
+          </li>
+          <li>
+            <strong style="color: #e2e8f0;">vs. AI itself</strong><br />
+            Tasks you do manually become automated
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+          <span>For Companies</span>
+          <span style="font-size: 1.5rem;">🏢</span>
+        </h3>
+        <ul style="font-size: 0.95rem; color: #a0aec0;">
+          <li style="margin-bottom: 0.75rem;">
+            <strong style="color: #e2e8f0;">Market pressure grows</strong>
+          </li>
+          <li style="margin-bottom: 0.75rem;">
+            <strong style="color: #e2e8f0;">vs. AI-powered competitors</strong><br />
+            They deliver faster, iterate quicker, outpace you
+          </li>
+          <li>
+            <strong style="color: #e2e8f0;">vs. lower cost structures</strong><br />
+            AI reduces their operational costs while you scale linearly
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div style="border: 2px solid #f0c36d; border-radius: 12px; padding: 1.5rem; background: rgba(240, 195, 109, 0.15); margin-top: 2rem;">
+      <p style="display: flex; align-items: center; gap: 0.5rem; margin: 0;">
+        <span style="font-size: 1.5rem;">⚠️</span>
+        <strong>Waiting isn't neutral.</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- Slide 5: AI on a Broken Foundation -->
+  <section>
+    <h2 style="text-align: center; color: #0ea5c1; margin-bottom: 2rem;">AI on a Broken Foundation</h2>
+    <p style="font-size: 1.6rem; font-weight: 600; text-align: center; color: #e2e8f0; margin-bottom: 3rem;">
+      Give AI to a dysfunctional team. Watch your problems multiply.
+    </p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
+      <div class="content-box red">
+        <span class="content-box-icon">🎲</span>
+        <div class="content-box-content">
+          <h3>Inconsistent Output</h3>
+          <p style="color: #a0aec0;">AI generates different solutions for the same problem. No patterns, no standards.</p>
+        </div>
+      </div>
+
+      <div class="content-box red">
+        <span class="content-box-icon">👀</span>
+        <div class="content-box-content">
+          <h3>Quality Collapse</h3>
+          <p style="color: #a0aec0;">Bad patterns get copy-pasted by AI. Technical debt compounds daily.</p>
+        </div>
+      </div>
+
+      <div class="content-box red">
+        <span class="content-box-icon">🧪</span>
+        <div class="content-box-content">
+          <h3>Technical Debt Spiral</h3>
+          <p style="color: #a0aec0;">AI writes implementation. Humans skip tests. Maintenance costs explode.</p>
+        </div>
+      </div>
+
+      <div class="content-box red">
+        <span class="content-box-icon">🤷</span>
+        <div class="content-box-content">
+          <h3>Blame Deflection</h3>
+          <p style="color: #a0aec0;">"AI isn't ready yet" / "Our domain is too complex" / "The AI doesn't understand our codebase"</p>
+        </div>
+      </div>
+    </div>
+    <div style="border: 2px solid #0ea5c1; border-radius: 12px; padding: 1.5rem; background: rgba(14, 165, 193, 0.15); margin-top: 2rem;">
+      <p style="margin: 0;">
+        <span style="font-size: 1.5rem;">📊</span>
+        <strong>DORA 2025:</strong> AI makes things worse when applied to broken processes. <br>You don't get 2x productivity. You get 2x problems.
+      </p>
+    </div>
+  </section>
+
+  <!-- Slide 6: What can go wrong? -->
+  <section>
+    <h2>What can go wrong?</h2>
+    <h3>Why integrations fail?</h3>
+  </section>
+
+  <!-- Slide 7: Common Failure Patterns -->
+  <section>
+    <h2>Common Failure Patterns</h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
+      <div class="content-box red">
+        <span class="content-box-icon">🌪️</span>
+        <div class="content-box-content">
+          <h3>Integrating AI everywhere at once</h3>
+          <p style="color: #a0aec0;"><strong>Why it fails:</strong> No baseline to measure success, overwhelming to maintain</p>
+        </div>
+      </div>
+
+      <div class="content-box red fragment">
+        <span class="content-box-icon">🤖</span>
+        <div class="content-box-content">
+          <h3>Letting AI set its own boundaries</h3>
+          <p style="color: #a0aec0;"><strong>Why it fails:</strong> AI doesn't understand your context deeply enough</p>
+        </div>
+      </div>
+
+      <div class="content-box red fragment">
+        <span class="content-box-icon">🏗️</span>
+        <div class="content-box-content">
+          <h3>Overreliance on AI</h3>
+          <p style="color: #a0aec0;"><strong>Why it fails:</strong> Too much context, too many decisions, too risky</p>
+        </div>
+      </div>
+
+      <div class="content-box red fragment">
+        <span class="content-box-icon">🎯</span>
+        <div class="content-box-content">
+          <h3>Expecting feature development in 1 prompt</h3>
+          <p style="color: #a0aec0;"><strong>Why it fails:</strong> Features need iteration, edge cases, business context</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="fragment" style="border: 2px solid #f0c36d; border-radius: 12px; padding: 1.5rem; background: rgba(240, 195, 109, 0.15);">
+      <p style="display: flex; align-items: center; gap: 0.5rem; margin: 0;">
+        <span style="font-size: 1.5rem;">⚠️</span>
+        <strong>The Pattern: Lack of Foundation</strong> — All of these fail because they skip the foundational work.
+      </p>
+    </div>
+  </section>
+
+  <!-- Slide 8: The Hype vs Reality -->
+  <section>
+    <h2>The Hype vs Reality</h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+      <div>
+        <h3>The Hype</h3>
+        <ul style="list-style: none;">
+          <li>❌ AI builds features autonomously</li>
+          <li>❌ AI replaces developers</li>
+          <li>❌ 10x productivity overnight</li>
+        </ul>
+      </div>
+      <div class="fragment">
+        <h3>Reality</h3>
+        <ul style="list-style: none;">
+          <li>✅ AI helps <strong>YOU</strong> building features</li>
+          <li>✅ AI empowers software engineers</li>
+          <li>✅ &gt;1x productivity with proper setup</li>
+          <li>⚠️ Hurts productivity if misused</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 9: Vibe Coding vs. AI-Assisted -->
+  <section>
+    <h2>Vibe Coding vs. AI-Assisted Coding</h2>
+    <table style="width: 100%; border-collapse: collapse; margin-top: 2rem; font-size: 0.85rem;">
+      <thead>
+        <tr style="border-bottom: 2px solid #0ea5c1;">
+          <th style="text-align: left; padding: 1rem; background: rgba(14, 165, 193, 0.1);">Aspect</th>
+          <th style="text-align: left; padding: 1rem; background: rgba(14, 165, 193, 0.1);">Vibe Coding</th>
+          <th style="text-align: left; padding: 1rem; background: rgba(14, 165, 193, 0.1);">AI-Assisted Coding</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom: 1px solid #374151;">
+          <td style="padding: 0.75rem; font-weight: 600;">Prompting &<br/>Context</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">Feature description</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">Feature description + technical details</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #374151;">
+          <td style="padding: 0.75rem; font-weight: 600;">Guidelines</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">Don't exist or weak</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">Well-defined constraints</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #374151;">
+          <td style="padding: 0.75rem; font-weight: 600;">Code Quality</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">Unpredictable</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">Consistent with codebase</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #374151;">
+          <td style="padding: 0.75rem; font-weight: 600;">Codebase<br/>Scalability</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">😐</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">Grows by following existing patterns</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #374151;">
+          <td style="padding: 0.75rem; font-weight: 600;">Productivity</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">High at first, collapses quickly</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">Consistently high</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #374151;">
+          <td style="padding: 0.75rem; font-weight: 600;">Team Impact</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">There can't be a team 😐</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">Less manual work, focus on complex problems</td>
+        </tr>
+        <tr>
+          <td style="padding: 0.75rem; font-weight: 600;">Emotions</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">Hope</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">Joy</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Slide 10: Building the Foundation -->
+  <section>
+    <h2>Building the Foundation</h2>
+  </section>
+
+  <!-- Slide 11: 1. Your Workflow Comes First -->
+  <section>
+    <h3>1. Your Workflow Comes First</h3>
+    <ul>
+      <li>Map your existing development workflow</li>
+      <li>Identify pain points and high-value targets</li>
+      <li>Only then consider where AI fits</li>
+    </ul>
+  </section>
+
+  <!-- Slide 12: 2. Your Codebase = Training Data -->
+  <section>
+    <h3>2. Your Codebase = Training Data</h3>
+    <p style="color: #a0aec0; margin-bottom: 2rem;">AI is pattern-matching, not magic</p>
+    <div class="fragment">
+      <p style="font-size: 2.5rem; font-weight: 700; color: #0ea5c1; margin: 2rem 0;">
+        Garbage In ⇒ Garbage Out
+      </p>
+      <p style="font-size: 1.1rem; color: #a0aec0;">
+        Your codebase quality directly determines AI output quality.
+      </p>
+    </div>
+  </section>
+
+  <!-- Slide 13: 3. The 3-Layer Approach -->
+  <section>
+    <h3 style="margin-bottom: 1rem;">3. The 3-Layer Approach</h3>
+    <div style="display: flex; flex-direction: column; gap: 1rem;">
+      <div style="border: 3px solid #4ade80; border-radius: 12px; padding: 1rem 1.25rem; background: rgba(74, 222, 128, 0.1); position: relative;">
+        <span style="position: absolute; top: 0.75rem; right: 1rem; background: white; color: black; padding: 0.35rem 0.75rem; border-radius: 6px; font-weight: 700; font-size: 0.75rem;">Most Important</span>
+        <h3 style="margin-bottom: 0.35rem; font-size: 1.3rem;">Layer 1: Codebase</h3>
+        <p style="margin-bottom: 0.35rem; font-size: 1rem;"><strong>Consistency and good examples</strong></p>
+        <p style="font-style: italic; color: #a0aec0; font-size: 0.9rem;">Example: Existing handlers show the pattern</p>
+      </div>
+
+      <div class="fragment" style="border: 3px solid #0ea5c1; border-radius: 12px; padding: 1rem 1.25rem; background: rgba(14, 165, 193, 0.1); position: relative;">
+        <span style="position: absolute; top: 0.75rem; right: 1rem; background: white; color: black; padding: 0.35rem 0.75rem; border-radius: 6px; font-weight: 700; font-size: 0.75rem;">Supplements</span>
+        <h3 style="margin-bottom: 0.35rem; font-size: 1.3rem;">Layer 2: Guidelines</h3>
+        <p style="margin-bottom: 0.35rem; font-size: 1rem;"><strong>Navigates, restricts, clarifies</strong></p>
+        <p style="font-style: italic; color: #a0aec0; font-size: 0.9rem;">Example: Use error middleware, validate with Zod</p>
+      </div>
+
+      <div class="fragment" style="border: 3px solid #f0c36d; border-radius: 12px; padding: 1rem 1.25rem; background: rgba(240, 195, 109, 0.1); position: relative;">
+        <span style="position: absolute; top: 0.75rem; right: 1rem; background: white; color: black; padding: 0.35rem 0.75rem; border-radius: 6px; font-weight: 700; font-size: 0.75rem;">Reference Implementation</span>
+        <h3 style="margin-bottom: 0.35rem; font-size: 1.3rem;">Layer 3: References</h3>
+        <p style="margin-bottom: 0.35rem; font-size: 1rem;"><strong>Point AI to similar existing code</strong></p>
+        <p style="font-style: italic; color: #a0aec0; font-size: 0.9rem;">Example: "Similar implementation we have in /handlers/auth/login.ts"</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 14: The "Junior Developer" Mental Model -->
+  <section>
+    <h2>The "Junior Developer" Mental Model</h2>
+    <p>Think of AI as a talented junior developer on your team.</p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2rem; align-items: start;">
+
+      <div>
+        <h3>Junior devs need:</h3>
+        <ul>
+          <li>Good examples to follow</li>
+          <li>Clear boundaries</li>
+          <li>Code review</li>
+          <li>Specific tasks</li>
+        </ul>
+      </div>
+
+      <div class="fragment">
+        <h3>AI needs the same:</h3>
+        <ul>
+          <li>Strong codebase patterns</li>
+          <li>Well-defined scope</li>
+          <li>Your oversight</li>
+          <li>Focused objectives</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Slide 15: Where to Start -->
+  <section>
+    <h2>Where to Start</h2>
+    <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem;">
+      <div class="content-box">
+        <span class="content-box-icon">🌱</span>
+        <div class="content-box-content">
+          <h3>Start Small</h3>
+          <p style="color: #a0aec0;">Begin with unit tests or simple HTTP handlers</p>
+        </div>
+      </div>
+
+      <div class="content-box fragment">
+        <span class="content-box-icon">📋</span>
+        <div class="content-box-content">
+          <h3>Make Examples First</h3>
+          <p style="color: #a0aec0;">Create one perfect example, then let AI replicate</p>
+        </div>
+      </div>
+
+      <div class="content-box fragment">
+        <span class="content-box-icon">🔄</span>
+        <div class="content-box-content">
+          <h3>Test and Refine</h3>
+          <p style="color: #a0aec0;">Iterate on guidelines based on actual output</p>
+        </div>
+      </div>
+
+      <div class="content-box fragment">
+        <span class="content-box-icon">📈</span>
+        <div class="content-box-content">
+          <h3>Scale Gradually</h3>
+          <p style="color: #a0aec0;">Expand only after proving it works</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 16: Possibilities -->
+  <section>
+    <h2>Possibilities</h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem;">
+      <div class="content-box">
+        <span class="content-box-icon">🧪</span>
+        <div class="content-box-content">
+          <h3>Test Generation</h3>
+          <p style="color: #a0aec0;">Generating Unit, Integration and E2E tests</p>
+        </div>
+      </div>
+
+      <div class="content-box fragment">
+        <span class="content-box-icon">👁️</span>
+        <div class="content-box-content">
+          <h3>Code Reviews</h3>
+          <p style="color: #a0aec0;">Acceptance Criteria, Performance, Guidelines</p>
+        </div>
+      </div>
+
+      <div class="content-box fragment">
+        <span class="content-box-icon">⚡</span>
+        <div class="content-box-content">
+          <h3>Code Generation</h3>
+          <p style="color: #a0aec0;">Code generation at all levels</p>
+        </div>
+      </div>
+
+      <div class="content-box fragment">
+        <span class="content-box-icon">✨</span>
+        <div class="content-box-content">
+          <h3>And more...</h3>
+          <p style="color: #a0aec0;">Documentation, refactoring, bug fixes</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 17: Demo -->
+  <section>
+    <h2>Let me show you a quick demo</h2>
+  </section>
+
+  <!-- Slide 18: Thank you -->
+  <section>
+    <h2>Thank you!</h2>
+  </section>
+</PresentationLayout>
