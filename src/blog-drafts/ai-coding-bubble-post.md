@@ -1,4 +1,5 @@
 # Future of AI Coding Agents: Bubble or Future?
+
 Subtitle: AI makes elite teams better and broken teams worse. The gap is widening. This isn't hype - it's data.
 
 Some people are speculating about the AI bubble bursting. But what does that even mean? The models will get dumber? Slower? Stop existing? I think they mean the hype will fade, the funding will dry up, the growth will slow down. They're missing the point.

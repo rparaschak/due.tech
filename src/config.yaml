@@ -66,6 +66,9 @@ analytics:
   vendors:
     googleAnalytics:
       id: null # or "G-XXXXXXXXXX"
+    umami:
+      websiteId: '5da8ba0f-fe50-408a-b818-fda96eddb0e2'
+      src: 'https://cloud.umami.is/script.js'
 
 ui:
   theme: 'dark' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"

@@ -1,18 +1,7 @@
 ---
 import Button from '~/components/ui/Button.astro';
 
-const {
-  variant = 'primary',
-  href = '#contact',
-  class: className = '',
-  ...rest
-} = Astro.props;
+const { variant = 'primary', href = '#contact', class: className = '', ...rest } = Astro.props;
 ---
 
-<Button
-  variant={variant}
-  text="Book a Discovery Call"
-  href={href}
-  class={`whitespace-nowrap ${className}`}
-  {...rest}
-/>
+<Button variant={variant} text="Book a Discovery Call" href={href} class={`whitespace-nowrap ${className}`} {...rest} />

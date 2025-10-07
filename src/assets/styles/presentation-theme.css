@@ -35,7 +35,7 @@
 
 /* Title Slide Typography */
 .reveal .title-slide h1,
-.reveal section[data-state="title"] h1 {
+.reveal section[data-state='title'] h1 {
   font-family: 'Nunito', sans-serif;
   font-weight: 700;
   font-size: 3.5rem; /* 56pt equivalent */
@@ -44,7 +44,7 @@
 }
 
 .reveal .title-slide h2,
-.reveal section[data-state="title"] h2 {
+.reveal section[data-state='title'] h2 {
   font-family: 'Nunito', sans-serif;
   font-weight: 400;
   font-size: 1.75rem; /* 28pt equivalent */
@@ -52,7 +52,7 @@
 }
 
 /* Heading Typography (non-title slides) */
-.reveal h1:not(.title-slide h1):not(section[data-state="title"] h1) {
+.reveal h1:not(.title-slide h1):not(section[data-state='title'] h1) {
   font-family: 'Nunito', sans-serif;
   font-weight: 700;
   font-size: 2.5rem; /* 40pt equivalent */
@@ -60,7 +60,7 @@
   margin-bottom: 0.75em;
 }
 
-.reveal h2:not(.title-slide h2):not(section[data-state="title"] h2) {
+.reveal h2:not(.title-slide h2):not(section[data-state='title'] h2) {
   font-family: 'Nunito', sans-serif;
   font-weight: 600;
   font-size: 2rem; /* 32pt equivalent */
