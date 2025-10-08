@@ -422,31 +422,36 @@ const metadata = {
     <div style="margin-top: 2rem;">
       <p style="font-size: 1.3rem; font-weight: 600; color: #0ea5c1; margin-bottom: 2rem;">Fast. Milliseconds.</p>
 
-      <div style="margin-bottom: 2rem;">
-        <h3 style="color: #e2e8f0;">What they test:</h3>
-        <ul style="color: #a0aec0;">
-          <li>Does this function work in isolation?</li>
-          <li>Does this component render correctly?</li>
-        </ul>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 2rem; align-items: start;">
+        <div>
+          <h3 style="color: #e2e8f0; margin-bottom: 1rem;">What they test:</h3>
+          <ul style="color: #a0aec0; font-size: 0.95rem;">
+            <li style="margin-bottom: 0.75rem;">Does this function return correct output for given input?</li>
+            <li style="margin-bottom: 0.75rem;">Does this component render without crashing?</li>
+            <li>Does this utility handle edge cases?</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 style="color: #e2e8f0; margin-bottom: 1rem;">What they don't test:</h3>
+          <ul style="color: #a0aec0; font-size: 0.95rem;">
+            <li style="margin-bottom: 0.75rem;">User workflows across multiple components</li>
+            <li style="margin-bottom: 0.75rem;">How components work together</li>
+            <li>Real user scenarios</li>
+          </ul>
+        </div>
       </div>
 
-      <div style="margin-bottom: 2rem;">
-        <h3 style="color: #e2e8f0;">What they don't test:</h3>
-        <ul style="color: #a0aec0;">
-          <li>The actual feature users see</li>
-        </ul>
-      </div>
-
-      <div style="margin-bottom: 2rem;">
-        <h3 style="color: #e2e8f0;">When to use:</h3>
-        <ul style="color: #a0aec0;">
-          <li>Complex business logic</li>
-          <li>Edge cases in utilities</li>
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <h3 style="color: #e2e8f0; margin-bottom: 1rem;">When to use:</h3>
+        <ul style="color: #a0aec0; font-size: 0.95rem; display: inline-block; text-align: left;">
+          <li style="margin-bottom: 0.75rem;">Complex business logic</li>
+          <li style="margin-bottom: 0.75rem;">Edge cases in utilities</li>
           <li>Pure functions</li>
         </ul>
       </div>
 
-      <p style="font-size: 1.1rem; color: #0ea5c1; font-weight: 600;">10-20% in Testing Trophy</p>
+      <p style="font-size: 1.1rem; color: #0ea5c1; font-weight: 600; text-align: center;">10-20% in Testing Trophy</p>
     </div>
   </section>
 
@@ -458,32 +463,34 @@ const metadata = {
         Slow. Depends on backend + 3rd party services.
       </p>
 
-      <div style="margin-bottom: 2rem;">
-        <h3 style="color: #e2e8f0;">What they test:</h3>
-        <ul style="color: #a0aec0;">
-          <li>Does the feature work for the user?</li>
-          <li>Mimics real user actions</li>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 2rem; align-items: start;">
+        <div>
+          <h3 style="color: #e2e8f0; margin-bottom: 1rem;">What they test:</h3>
+          <ul style="color: #a0aec0; font-size: 0.95rem;">
+            <li style="margin-bottom: 0.75rem;">Does the feature work for the user?</li>
+            <li>Mimics real user actions</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 style="color: #e2e8f0; margin-bottom: 1rem;">What they don't test:</h3>
+          <ul style="color: #a0aec0; font-size: 0.95rem;">
+            <li style="margin-bottom: 0.75rem;">Edge cases efficiently</li>
+            <li>Fast feedback loops</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <h3 style="color: #e2e8f0; margin-bottom: 1rem;">When to use:</h3>
+        <ul style="color: #a0aec0; font-size: 0.95rem; display: inline-block; text-align: left;">
+          <li style="margin-bottom: 0.75rem;">Critical user paths</li>
+          <li style="margin-bottom: 0.75rem;">End-to-end workflows</li>
+          <li>Smoke tests for production</li>
         </ul>
       </div>
 
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
-        <div>
-          <h3 style="color: #4ade80;">Strengths:</h3>
-          <ul style="color: #a0aec0;">
-            <li>Extremely effective for finding bugs in user flows</li>
-            <li>Highest confidence</li>
-          </ul>
-        </div>
-        <div>
-          <h3 style="color: #f87171;">Weaknesses:</h3>
-          <ul style="color: #a0aec0;">
-            <li>Expensive when testing all edge cases</li>
-            <li>Slower feedback loop</li>
-          </ul>
-        </div>
-      </div>
-
-      <p style="font-size: 1.1rem; color: #0ea5c1; font-weight: 600;">20-30% in Testing Trophy</p>
+      <p style="font-size: 1.1rem; color: #0ea5c1; font-weight: 600; text-align: center;">20-30% in Testing Trophy</p>
     </div>
   </section>
 
@@ -491,56 +498,64 @@ const metadata = {
   <section>
     <h2>Integration Tests: The New Big Boss</h2>
     <div style="margin-top: 2rem;">
-      <p style="font-size: 1.3rem; font-weight: 600; color: #4ade80; margin-bottom: 2rem;">
-        Fast. Don't depend on backend or 3rd parties.
-      </p>
-
-      <div style="margin-bottom: 2rem;">
-        <h3 style="color: #e2e8f0;">What they test:</h3>
-        <ul style="color: #a0aec0;">
-          <li>Does the feature work for the user?</li>
-          <li>Mimics user actions (like E2E)</li>
-          <li>But with mocked API calls</li>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 2rem;">
+        <ul style="list-style: none; padding: 0; margin: 0; color: #a0aec0; font-size: 1.1rem; line-height: 1.8;">
+          <li style="margin-bottom: 0.75rem;">
+            <span style="color: #f87171; font-size: 1.3rem;">❌</span> Unit tests don't test features
+          </li>
+          <li>
+            <span style="color: #f87171; font-size: 1.3rem;">❌</span> E2E are too slow to test everything
+          </li>
         </ul>
-      </div>
 
-      <div style="margin-bottom: 2rem;">
-        <h3 style="color: #0ea5c1;">Why they're the sweet spot:</h3>
-        <ul style="color: #a0aec0;">
-          <li>High efficiency for finding bugs</li>
-          <li>Cheap to run</li>
-          <li>Fast feedback</li>
-        </ul>
-      </div>
-
-      <p style="font-size: 1.1rem; color: #0ea5c1; font-weight: 600;">50-60% in Testing Trophy</p>
-    </div>
-  </section>
-
-  <!-- Slide 17: Why the Shift? -->
-  <section>
-    <h2>Why the Shift to Integration Tests?</h2>
-    <div style="margin-top: 2rem;">
-      <div class="content-box" style="margin-bottom: 1.5rem;">
-        <span class="content-box-icon">🛠️</span>
-        <div class="content-box-content">
-          <h3>Modern tools made it possible</h3>
-          <ul style="color: #a0aec0; font-size: 0.9rem; margin: 0.5rem 0 0 0;">
-            <li>React Testing Library</li>
-            <li>Mock Service Worker (MSW)</li>
-            <li>Better testing frameworks</li>
+        <div>
+          <h3 style="color: #4ade80; margin-bottom: 1rem; font-size: 1.2rem;">Integration tests solve both:</h3>
+          <ul style="color: #a0aec0; font-size: 0.95rem; line-height: 1.8; margin: 0;">
+            <li style="margin-bottom: 0.75rem;">Test like a user (click, type, see results)</li>
+            <li style="margin-bottom: 0.75rem;">Run in seconds, not minutes</li>
+            <li style="margin-bottom: 0.75rem;">Use real store, real providers</li>
+            <li>Mock only the API</li>
           </ul>
         </div>
       </div>
 
-      <div class="content-box" style="margin-bottom: 1.5rem;">
-        <span class="content-box-icon">✨</span>
-        <div class="content-box-content">
-          <h3>Modern practices</h3>
-          <ul style="color: #a0aec0; font-size: 0.9rem; margin: 0.5rem 0 0 0;">
-            <li>Test behavior, not implementation</li>
-            <li>Test like a user would use it</li>
-          </ul>
+      <div
+        style="border: 2px solid #0ea5c1; border-radius: 12px; padding: 1.5rem; background: rgba(14, 165, 193, 0.15); margin-bottom: 1.5rem;"
+      >
+        <p style="margin: 0; font-size: 1.2rem; font-weight: 600; color: #e2e8f0; text-align: center;">
+          Result: Most bugs caught, fastest feedback.
+        </p>
+      </div>
+
+      <p style="font-size: 1.1rem; color: #0ea5c1; font-weight: 600; text-align: center;">50-60% in Testing Trophy</p>
+    </div>
+  </section>
+
+  <!-- Slide 17: Why integration tests are the new best practice? -->
+  <section>
+    <h2>Why integration tests are the new best practice?</h2>
+    <div style="margin-top: 2rem;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 1.5rem;">
+        <div class="content-box">
+          <div class="content-box-content">
+            <h3>Modern tools made it possible</h3>
+            <ul style="color: #a0aec0; font-size: 0.9rem; margin: 0.5rem 0 0 0;">
+              <li>React Testing Library</li>
+              <li>Mock Service Worker (MSW)</li>
+              <li>Better testing frameworks</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="content-box">
+          <div class="content-box-content">
+            <h3>Modern practices</h3>
+            <ul style="color: #a0aec0; font-size: 0.9rem; margin: 0.5rem 0 0 0;">
+              <li>Test behavior, not implementation</li>
+              <li>Test like a user would use it</li>
+              <li>Less complexity</li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -583,10 +598,15 @@ const metadata = {
           <td style="padding: 0.75rem; color: #a0aec0;">Tests technical details (component state)</td>
           <td style="padding: 0.75rem; color: #a0aec0;">Tests user behavior (like E2E)</td>
         </tr>
-        <tr>
+        <tr style="border-bottom: 1px solid #374151;">
           <td style="padding: 0.75rem; font-weight: 600;">Testing boundary</td>
           <td style="padding: 0.75rem; color: #a0aec0;">UI component (mock API, Store, providers)</td>
           <td style="padding: 0.75rem; color: #a0aec0;">API call (real providers, real store)</td>
+        </tr>
+        <tr>
+          <td style="padding: 0.75rem; font-weight: 600;">Moving logic between components</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">Unit test fails</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">RTL tests keep passing</td>
         </tr>
       </tbody>
     </table>
@@ -595,45 +615,64 @@ const metadata = {
     </p>
   </section>
 
-  <!-- Slide 19: Visual Comparison -->
+  <!-- Slide 19: Old Way vs New Way -->
   <section>
     <h2>Old Way vs New Way</h2>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem;">
-      <div>
-        <h3 style="color: #f87171; text-align: center; margin-bottom: 1rem;">Old Approach - Mock Hell</h3>
-        <pre class="mermaid">
-graph TB
-    A[User Action] --> B[Component<br/>MOCKED]
-    B --> C[Store<br/>MOCKED]
-    C --> D[API<br/>MOCKED]
-    D --> E[Providers<br/>MOCKED]
-
-    style A fill:#0ea5c1,stroke:#0284c7,color:#fff
-    style B fill:#ef4444,stroke:#dc2626,color:#fff
-    style C fill:#ef4444,stroke:#dc2626,color:#fff
-    style D fill:#ef4444,stroke:#dc2626,color:#fff
-    style E fill:#ef4444,stroke:#dc2626,color:#fff
-        </pre>
-        <p style="text-align: center; color: #f87171; font-weight: 600; margin-top: 1rem;">Multiple mocks to maintain</p>
-      </div>
-      <div>
-        <h3 style="color: #4ade80; text-align: center; margin-bottom: 1rem;">New Approach - Single Mock</h3>
-        <pre class="mermaid">
-graph TB
-    A[User Action] --> B[Component<br/>REAL]
-    B --> C[Store<br/>REAL]
-    C --> D[Providers<br/>REAL]
-    D --> E[API<br/>MOCKED with MSW]
-
-    style A fill:#0ea5c1,stroke:#0284c7,color:#fff
-    style B fill:#22c55e,stroke:#16a34a,color:#fff
-    style C fill:#22c55e,stroke:#16a34a,color:#fff
-    style D fill:#22c55e,stroke:#16a34a,color:#fff
-    style E fill:#f59e0b,stroke:#d97706,color:#fff
-        </pre>
-        <p style="text-align: center; color: #4ade80; font-weight: 600; margin-top: 1rem;">Only API mocked</p>
-      </div>
-    </div>
+    <table style="width: 100%; border-collapse: collapse; margin-top: 1.5rem; font-size: 0.7rem;">
+      <thead>
+        <tr style="border-bottom: 2px solid #0ea5c1;">
+          <th style="text-align: left; padding: 0.6rem; background: rgba(14, 165, 193, 0.1);">What needs mocking</th>
+          <th style="text-align: left; padding: 0.6rem; background: rgba(14, 165, 193, 0.1);">
+            Traditional Unit Testing
+          </th>
+          <th style="text-align: left; padding: 0.6rem; background: rgba(14, 165, 193, 0.1);">
+            MSW + RTL Integration Testing
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom: 1px solid #374151;">
+          <td style="padding: 0.6rem; font-weight: 600;">API calls</td>
+          <td style="padding: 0.6rem; color: #a0aec0;">Mock every fetch/axios call in every test</td>
+          <td style="padding: 0.6rem; color: #a0aec0;">Mock once at network level with MSW handlers</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #374151;">
+          <td style="padding: 0.6rem; font-weight: 600;">Routing</td>
+          <td style="padding: 0.6rem; color: #a0aec0;">Mock useNavigate, useParams, useLocation, etc.</td>
+          <td style="padding: 0.6rem; color: #a0aec0;">Wrap in MemoryRouter, works naturally</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #374151;">
+          <td style="padding: 0.6rem; font-weight: 600;">Custom hooks</td>
+          <td style="padding: 0.6rem; color: #a0aec0;">Mock each custom hook separately</td>
+          <td style="padding: 0.6rem; color: #a0aec0;">Use real hooks (they run naturally)</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #374151;">
+          <td style="padding: 0.6rem; font-weight: 600;">Context providers</td>
+          <td style="padding: 0.6rem; color: #a0aec0;">Mock context values manually</td>
+          <td style="padding: 0.6rem; color: #a0aec0;">Wrap in real providers with test data</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #374151;">
+          <td style="padding: 0.6rem; font-weight: 600;">localStorage/sessionStorage</td>
+          <td style="padding: 0.6rem; color: #a0aec0;">Mock storage APIs</td>
+          <td style="padding: 0.6rem; color: #a0aec0;">Works with real browser APIs in jsdom</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #374151;">
+          <td style="padding: 0.6rem; font-weight: 600;">State management</td>
+          <td style="padding: 0.6rem; color: #a0aec0;">Mock store, selectors, dispatch</td>
+          <td style="padding: 0.6rem; color: #a0aec0;">Use real store with test initial state</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #374151;">
+          <td style="padding: 0.6rem; font-weight: 600;">Third-party UI libs</td>
+          <td style="padding: 0.6rem; color: #a0aec0;">Often need to mock complex components</td>
+          <td style="padding: 0.6rem; color: #a0aec0;">Render real components (may need setup)</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #374151;">
+          <td style="padding: 0.6rem; font-weight: 600;">Browser APIs</td>
+          <td style="padding: 0.6rem; color: #a0aec0;">Mock window, document, observers</td>
+          <td style="padding: 0.6rem; color: #a0aec0;">Most work in jsdom, mock only when needed</td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 
   <!-- Slide 20: Anatomy of React Integration Test -->
@@ -643,16 +682,7 @@ graph TB
       <div>
         <pre
           style="font-size: 0.5rem; line-height: 1.3; background: #1e293b; padding: 1rem; border-radius: 8px; overflow-x: auto; max-height: 500px;"
-          ><code style="color: #e2e8f0;">import &#123; render, screen, waitFor &#125; from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-import &#123; Provider &#125; from 'react-redux';
-import &#123; ThemeProvider &#125; from '@mui/material';
-import &#123; configureStore &#125; from '@reduxjs/toolkit';
-import &#123; setupServer &#125; from 'msw/node';
-import &#123; http, HttpResponse &#125; from 'msw';
-import &#123; TasksPage &#125; from './TasksPage';
-import &#123; tasksReducer &#125; from './tasksSlice';
-import &#123; theme &#125; from './theme';
+          ><code style="color: #e2e8f0;">// Imports
 
 const server = setupServer(
   http.get('/api/tasks', () =&gt; &#123;
@@ -660,10 +690,12 @@ const server = setupServer(
       &#123; id: 1, title: 'Review PR' &#125;
     ]);
   &#125;),
+          
   http.post('/api/tasks', async (&#123; request &#125;) =&gt; &#123;
     const body = await request.json();
     return HttpResponse.json(&#123; id: 2, title: body.title &#125;);
   &#125;)
+          
 );
 
 beforeAll(() =&gt; server.listen());
