@@ -9,6 +9,7 @@ import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
 import icon from 'astro-icon';
 import compress from 'astro-compress';
+import mermaid from 'astro-mermaid';
 import type { AstroIntegration } from 'astro';
 
 import astrowind from './vendor/integration';
@@ -31,6 +32,25 @@ export default defineConfig({
     }),
     sitemap(),
     mdx(),
+    mermaid({
+      theme: 'base',
+      autoTheme: true,
+      mermaidConfig: {
+        theme: 'base',
+        themeVariables: {
+          primaryColor: '#0ea5e9',
+          primaryTextColor: '#fff',
+          primaryBorderColor: '#0284c7',
+          lineColor: '#64748b',
+          secondaryColor: '#f1f5f9',
+          tertiaryColor: '#e0f2fe',
+          background: '#ffffff',
+          mainBkg: '#ffffff',
+          fontSize: '16px',
+          fontFamily: 'Inter, system-ui, sans-serif',
+        },
+      },
+    }),
     icon({
       include: {
         tabler: ['*'],

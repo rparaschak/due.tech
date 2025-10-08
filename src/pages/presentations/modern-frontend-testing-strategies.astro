@@ -1,0 +1,789 @@
+---
+import PresentationLayout from '~/layouts/PresentationLayout.astro';
+
+const metadata = {
+  title: 'Modern Frontend Testing Strategies',
+  description: 'Building Efficient Test Suites That Scale',
+  ignoreTitleTemplate: false,
+};
+---
+
+<PresentationLayout metadata={metadata}>
+  <!-- Slide 1: Title -->
+  <section data-state="title" class="title-slide">
+    <h1>Modern Frontend Testing Strategies</h1>
+    <h2>Building Efficient Test Suites That Scale</h2>
+  </section>
+
+  <!-- Slide 2: Why This Matters -->
+  <section>
+    <h2>Why This Matters</h2>
+    <p style="font-size: 1.4rem; font-weight: 600; text-align: center; color: #e2e8f0; margin-bottom: 2rem;">
+      Our test suite doesn't match our ambitions.
+    </p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem;">
+      <div>
+        <h3 style="color: #0ea5c1;">Impact on the team:</h3>
+        <ul style="color: #a0aec0;">
+          <li>Slower feature delivery</li>
+          <li>Engineers blocked waiting for feedback</li>
+          <li>Lower deployment confidence</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="color: #0ea5c1;">Impact on the business:</h3>
+        <ul style="color: #a0aec0;">
+          <li>Longer time to market</li>
+          <li>Higher bug fix costs</li>
+          <li>Reduced competitive advantage</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 3: Without Tests -->
+  <section>
+    <h2>Without Tests, You're Stuck</h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto 1fr auto; gap: 0 2rem; margin-top: 2rem;">
+      <div>
+        <h3 style="color: #0ea5c1; margin-bottom: 1rem;">Refactoring Becomes Impossible</h3>
+      </div>
+      <div>
+        <h3 style="color: #0ea5c1; margin-bottom: 1rem;">Every Change Is Risky</h3>
+      </div>
+
+      <div>
+        <p style="color: #e2e8f0; margin-bottom: 1rem;">Questions that stop you:</p>
+        <ul style="color: #a0aec0; font-size: 0.95rem;">
+          <li>Will this change cascade?</li>
+          <li>Does something else depend on this?</li>
+          <li>What breaks if I touch this?</li>
+        </ul>
+      </div>
+      <div>
+        <p style="color: #e2e8f0; margin-bottom: 1rem;">Common scenario:</p>
+        <ul style="color: #a0aec0; font-size: 0.95rem;">
+          <li>Fix feature A, break feature B</li>
+          <li>Fix one bug, create another</li>
+        </ul>
+      </div>
+
+      <div>
+        <p style="color: #f0c36d; margin-top: 1.5rem; font-weight: 600;">
+          Result: You don't refactor. Tech debt grows.
+        </p>
+      </div>
+      <div>
+        <p style="color: #f0c36d; margin-top: 1.5rem; font-weight: 600;">
+          Result: Production bugs. Fragile codebase. Slower delivery.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 4: The Cost of No Tests -->
+  <section>
+    <h2>The Cost of No Tests</h2>
+    <div style="margin-top: 2rem;">
+      <div class="content-box" style="margin-bottom: 1.5rem;">
+        <span class="content-box-icon">⚡</span>
+        <div class="content-box-content">
+          <h3>Manual testing takes hours or days</h3>
+          <p style="color: #a0aec0;">Machines are faster than people. Your test suite runs in minutes.</p>
+        </div>
+      </div>
+
+      <div class="content-box" style="margin-bottom: 1.5rem;">
+        <span class="content-box-icon">💸</span>
+        <div class="content-box-content">
+          <h3>Bugs get exponentially more expensive</h3>
+          <ul style="color: #a0aec0; font-size: 0.9rem; margin: 0.5rem 0 0 0;">
+            <li>Fix in dev: 5 minutes</li>
+            <li>Fix in QA: 2 hours (context switch, deploy, verify)</li>
+            <li>Fix in production: 8 hours + customer trust + revenue impact</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-box" style="margin-bottom: 1.5rem;">
+        <span class="content-box-icon">🔒</span>
+        <div class="content-box-content">
+          <h3>Safe refactoring disappears</h3>
+          <p style="color: #a0aec0;">Without tests, every change is scary. Your codebase becomes untouchable.</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <span class="content-box-icon">😰</span>
+        <div class="content-box-content">
+          <h3>Peace of mind vanishes</h3>
+          <p style="color: #a0aec0;">Deploy on Friday? No way.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 5: The Prerequisite -->
+  <section>
+    <h2>Strong Testing Enables Continuous Delivery</h2>
+    <div style="margin-top: 3rem;">
+      <blockquote
+        style="font-size: 1.6rem; font-weight: 600; color: #0ea5c1; margin: 2rem auto; padding: 1.5rem; border-left: 4px solid #0ea5c1; background: rgba(14, 165, 193, 0.1);"
+      >
+        Continuous Delivery ≠ Continuous Deployment
+      </blockquote>
+      <div style="margin-top: 2rem; font-size: 1.1rem;">
+        <p style="color: #e2e8f0; font-weight: 600; margin-bottom: 1rem;">Continuous Delivery means:</p>
+        <p style="color: #a0aec0; font-size: 1.3rem; margin-bottom: 1rem;">
+          You <strong style="color: #0ea5c1;">CAN</strong> ship to production at any time.
+        </p>
+        <p style="color: #a0aec0;">Tests give you that confidence.</p>
+        <p style="color: #64748b; font-size: 0.9rem; margin-top: 2rem; font-style: italic;">
+          (Note: Don't confuse with Continuous Deployment - automatically shipping every commit)
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 6: What We Want to Achieve -->
+  <section>
+    <h2>The Goal</h2>
+    <div style="display: grid; grid-template-columns: auto auto auto; gap: 1rem 2rem; margin: 2rem auto 0; font-size: 1.2rem; align-items: center; max-width: 650px; justify-items: start;">
+      <div style="text-align: left;">
+        <span style="color: #4ade80; font-size: 1.5rem;">✅</span>
+        <strong style="color: #e2e8f0;">Tests are easy to write</strong>
+      </div>
+      <span style="color: #64748b;">—</span>
+      <span style="color: #a0aec0; text-align: left;">Not a burden</span>
+
+      <div style="text-align: left;">
+        <span style="color: #4ade80; font-size: 1.5rem;">✅</span>
+        <strong style="color: #e2e8f0;">Tests are reliable</strong>
+      </div>
+      <span style="color: #64748b;">—</span>
+      <span style="color: #a0aec0; text-align: left;">No flaky failures</span>
+
+      <div style="text-align: left;">
+        <span style="color: #4ade80; font-size: 1.5rem;">✅</span>
+        <strong style="color: #e2e8f0;">Tests give fast feedback</strong>
+      </div>
+      <span style="color: #64748b;">—</span>
+      <span style="color: #a0aec0; text-align: left;">Minutes, not hours</span>
+
+      <div style="text-align: left;">
+        <span style="color: #4ade80; font-size: 1.5rem;">✅</span>
+        <strong style="color: #e2e8f0;">Tests catch real bugs</strong>
+      </div>
+      <span style="color: #64748b;">—</span>
+      <span style="color: #a0aec0; text-align: left;">Not just checkbox compliance</span>
+    </div>
+  </section>
+
+  <!-- Slide 7: Why Teams Skip Tests -->
+  <section>
+    <h2>Why Teams Give Up on Testing</h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem;">
+      <div class="content-box">
+        <span class="content-box-icon">🤷</span>
+        <div class="content-box-content">
+          <h3>Don't know how</h3>
+          <p style="color: #a0aec0;">Following outdated tutorials from 2018</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <span class="content-box-icon">⏰</span>
+        <div class="content-box-content">
+          <h3>Business pressure</h3>
+          <p style="color: #a0aec0;">"We'll add tests later" (spoiler: they don't)</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <span class="content-box-icon">😤</span>
+        <div class="content-box-content">
+          <h3>Takes time to develop</h3>
+          <p style="color: #a0aec0;">Writing tests feels slower than shipping features</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <span class="content-box-icon">🔧</span>
+        <div class="content-box-content">
+          <h3>Maintenance hell</h3>
+          <p style="color: #a0aec0;">Every small change breaks 20 tests</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 8: Three Testing Layers -->
+  <section>
+    <h2>Types of Tests on Frontend</h2>
+    <div style="margin-top: 3rem; font-size: 1.2rem; line-height: 2;">
+      <p style="margin-bottom: 1.5rem;">
+        <strong style="color: #0ea5c1;">Unit Tests</strong>
+        <span style="color: #a0aec0;"> → Test isolated functions</span>
+      </p>
+      <p style="margin-bottom: 1.5rem;">
+        <strong style="color: #0ea5c1;">Integration Tests</strong>
+        <span style="color: #a0aec0;"> → Test components + API interactions</span>
+      </p>
+      <p>
+        <strong style="color: #0ea5c1;">E2E Tests</strong>
+        <span style="color: #a0aec0;"> → Test complete user flows</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Slide 9: Comparison Table -->
+  <section>
+    <h2>Understanding Each Test Type</h2>
+    <table style="width: 100%; border-collapse: collapse; margin-top: 1.5rem; font-size: 0.8rem;">
+      <thead>
+        <tr style="border-bottom: 2px solid #0ea5c1;">
+          <th style="text-align: left; padding: 0.75rem; background: rgba(14, 165, 193, 0.1);"></th>
+          <th style="text-align: left; padding: 0.75rem; background: rgba(14, 165, 193, 0.1);">Unit</th>
+          <th style="text-align: left; padding: 0.75rem; background: rgba(14, 165, 193, 0.1);">Integration</th>
+          <th style="text-align: left; padding: 0.75rem; background: rgba(14, 165, 193, 0.1);">E2E</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom: 1px solid #374151;">
+          <td style="padding: 0.75rem; font-weight: 600;">What question?</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">Does this function work in isolation?</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">Do these pieces work together?</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">Does the user flow work end-to-end?</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #374151;">
+          <td style="padding: 0.75rem; font-weight: 600;">Speed</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">⚡ Milliseconds</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">🏃 Seconds</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">🐌 Minutes</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #374151;">
+          <td style="padding: 0.75rem; font-weight: 600;">Confidence</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">🤷 Low - doesn't test real interactions</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">✅ High - tests actual behavior</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">✅✅ Highest - tests everything</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #374151;">
+          <td style="padding: 0.75rem; font-weight: 600;">Maintenance</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">✅ Easy</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">✅ Moderate</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">✅ Moderate</td>
+        </tr>
+        <tr>
+          <td style="padding: 0.75rem; font-weight: 600;">When to use</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">Complex logic, edge cases</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">Most of your tests</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">Critical user paths only</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Slide 10: Testing Pyramid -->
+  <section>
+    <h2>The Traditional Approach: Testing Pyramid</h2>
+    <div style="margin-top: 2rem;">
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 0;">
+        <!-- E2E: Triangle -->
+        <div
+          style="width: 350px; height: 70px; background: linear-gradient(to bottom, rgba(239, 68, 68, 0.3), rgba(239, 68, 68, 0.5)); border: 2px solid #ef4444; display: flex; align-items: center; justify-content: center; clip-path: polygon(50% 0, 100% 100%, 0 100%);"
+        >
+          <span style="font-size: 0.9rem; font-weight: 600;">🔴 E2E: 10%</span>
+        </div>
+        <!-- Integration: Trapezoid -->
+        <div
+          style="width: 500px; height: 90px; background: linear-gradient(to bottom, rgba(34, 197, 94, 0.3), rgba(34, 197, 94, 0.5)); border: 2px solid #22c55e; border-top: none; display: flex; align-items: center; justify-content: center; clip-path: polygon(15% 0, 85% 0, 100% 100%, 0 100%);"
+        >
+          <span style="font-size: 0.9rem; font-weight: 600;">🟢 Integration: 20%</span>
+        </div>
+        <!-- Unit: Trapezoid -->
+        <div
+          style="width: 600px; height: 110px; background: linear-gradient(to bottom, rgba(59, 130, 246, 0.3), rgba(59, 130, 246, 0.5)); border: 2px solid #3b82f6; border-top: none; display: flex; align-items: center; justify-content: center; clip-path: polygon(8.5% 0, 91.5% 0, 100% 100%, 0 100%);"
+        >
+          <span style="font-size: 0.9rem; font-weight: 600;">🔵 Unit: 70%</span>
+        </div>
+      </div>
+      <p style="margin-top: 2rem; color: #a0aec0; text-align: center; font-size: 1.1rem;">
+        <strong style="color: #e2e8f0;">The logic:</strong> Unit tests are cheap and fast, so write mostly those.
+      </p>
+    </div>
+  </section>
+
+  <!-- Slide 11: The Problem with Pyramids -->
+  <section>
+    <h2>Why the Pyramid Fails for Modern Frontend</h2>
+    <div style="margin-top: 2rem;">
+      <div class="content-box red" style="margin-bottom: 1.5rem;">
+        <span class="content-box-icon">🎯</span>
+        <div class="content-box-content">
+          <h3>Unit tests don't test behavior</h3>
+          <ul style="color: #a0aec0; font-size: 0.9rem; margin: 0.5rem 0 0 0;">
+            <li>They test implementation details</li>
+            <li>Function works in isolation ≠ feature works for users</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-box red" style="margin-bottom: 1.5rem;">
+        <span class="content-box-icon">🔧</span>
+        <div class="content-box-content">
+          <h3>High maintenance, low value</h3>
+          <ul style="color: #a0aec0; font-size: 0.9rem; margin: 0.5rem 0 0 0;">
+            <li>Tons of unit tests that break on every refactor</li>
+            <li>Engineers spend time maintaining tests that don't catch real bugs</li>
+            <li>Creates perception: "Testing is expensive and doesn't help"</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-box red">
+        <span class="content-box-icon">👤</span>
+        <div class="content-box-content">
+          <h3>The disconnect</h3>
+          <p style="color: #a0aec0;">Your users don't call functions. They click buttons and fill forms.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 12: Testing Trophy -->
+  <section>
+    <h2>Modern Approach: Testing Trophy</h2>
+    <div style="margin-top: 2rem;">
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 0;">
+        <!-- E2E: Triangle -->
+        <div
+          style="width: 420px; height: 90px; background: linear-gradient(to bottom, rgba(239, 68, 68, 0.3), rgba(239, 68, 68, 0.5)); border: 2px solid #ef4444; display: flex; align-items: center; justify-content: center; clip-path: polygon(50% 0, 88% 100%, 12% 100%);"
+        >
+          <span style="font-size: 0.9rem; font-weight: 600;">🔴 E2E: 20-30%</span>
+        </div>
+        <!-- Integration: Hexagon -->
+        <div
+          style="width: 420px; height: 140px; background: linear-gradient(to bottom, rgba(34, 197, 94, 0.3), rgba(34, 197, 94, 0.5)); border: 2px solid #22c55e; border-top: none; display: flex; align-items: center; justify-content: center; clip-path: polygon(12% 0, 88% 0, 100% 50%, 88% 100%, 12% 100%, 0% 50%);"
+        >
+          <span style="font-size: 0.9rem; font-weight: 600;">🟢 Integration: 50-60%</span>
+        </div>
+        <!-- Unit: Inverted Trapezoid (narrow bottom, wider top) -->
+        <div
+          style="width: 320px; height: 70px; background: linear-gradient(to bottom, rgba(59, 130, 246, 0.3), rgba(59, 130, 246, 0.5)); border: 2px solid #3b82f6; border-top: none; display: flex; align-items: center; justify-content: center; clip-path: polygon(0 0, 100% 0, 73% 100%, 27% 100%);"
+        >
+          <span style="font-size: 0.9rem; font-weight: 600;">🔵 Unit: 10-20%</span>
+        </div>
+        <!-- Static Analysis: Trapezoid (wide bottom, slim top) -->
+        <div
+          style="width: 450px; height: 60px; background: linear-gradient(to bottom, rgba(148, 163, 184, 0.3), rgba(148, 163, 184, 0.5)); border: 2px solid #94a3b8; border-top: none; display: flex; align-items: center; justify-content: center; clip-path: polygon(19% 0, 81% 0, 100% 100%, 0 100%);"
+        >
+          <span style="font-size: 0.85rem; font-weight: 600;">⚪ Static Analysis (TypeScript, ESLint)</span>
+        </div>
+      </div>
+      <p style="margin-top: 2rem; color: #a0aec0; text-align: center; font-size: 1.1rem;">
+        <strong style="color: #e2e8f0;">The shift:</strong> Focus on integration tests - they test how things work
+        together.
+      </p>
+    </div>
+  </section>
+
+  <!-- Slide 13: Static Analysis -->
+  <section>
+    <h2>Static Analysis: The Foundation</h2>
+    <h3 style="color: #0ea5c1; margin-bottom: 2rem;">TypeScript + ESLint</h3>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2rem; align-items: start;">
+      <div>
+        <h3 style="color: #e2e8f0; margin-bottom: 1rem;">Fast feedback</h3>
+        <ul style="color: #a0aec0; font-size: 0.95rem;">
+          <li style="margin-bottom: 0.75rem;">Code doesn't compile if you use a non-existing property</li>
+          <li style="margin-bottom: 0.75rem;">Code doesn't compile if optional property isn't checked</li>
+          <li>Zero runtime cost</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 style="color: #e2e8f0; margin-bottom: 1rem;">What it covers</h3>
+        <ul style="color: #a0aec0; font-size: 0.95rem;">
+          <li style="margin-bottom: 0.75rem;">API endpoint contracts</li>
+          <li style="margin-bottom: 0.75rem;">State and actions (Redux, Zustand, etc.)</li>
+          <li style="margin-bottom: 0.75rem;">Component properties</li>
+          <li>All business logic functions</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top: 2rem; color: #0ea5c1; text-align: center; font-size: 1.1rem; font-weight: 600;">
+      The foundation of the trophy.
+    </p>
+  </section>
+
+  <!-- Slide 14: Unit Tests -->
+  <section>
+    <h2>Unit Tests</h2>
+    <div style="margin-top: 2rem;">
+      <p style="font-size: 1.3rem; font-weight: 600; color: #0ea5c1; margin-bottom: 2rem;">Fast. Milliseconds.</p>
+
+      <div style="margin-bottom: 2rem;">
+        <h3 style="color: #e2e8f0;">What they test:</h3>
+        <ul style="color: #a0aec0;">
+          <li>Does this function work in isolation?</li>
+          <li>Does this component render correctly?</li>
+        </ul>
+      </div>
+
+      <div style="margin-bottom: 2rem;">
+        <h3 style="color: #e2e8f0;">What they don't test:</h3>
+        <ul style="color: #a0aec0;">
+          <li>The actual feature users see</li>
+        </ul>
+      </div>
+
+      <div style="margin-bottom: 2rem;">
+        <h3 style="color: #e2e8f0;">When to use:</h3>
+        <ul style="color: #a0aec0;">
+          <li>Complex business logic</li>
+          <li>Edge cases in utilities</li>
+          <li>Pure functions</li>
+        </ul>
+      </div>
+
+      <p style="font-size: 1.1rem; color: #0ea5c1; font-weight: 600;">10-20% in Testing Trophy</p>
+    </div>
+  </section>
+
+  <!-- Slide 15: E2E Tests -->
+  <section>
+    <h2>E2E Tests</h2>
+    <div style="margin-top: 2rem;">
+      <p style="font-size: 1.3rem; font-weight: 600; color: #f0c36d; margin-bottom: 2rem;">
+        Slow. Depends on backend + 3rd party services.
+      </p>
+
+      <div style="margin-bottom: 2rem;">
+        <h3 style="color: #e2e8f0;">What they test:</h3>
+        <ul style="color: #a0aec0;">
+          <li>Does the feature work for the user?</li>
+          <li>Mimics real user actions</li>
+        </ul>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+        <div>
+          <h3 style="color: #4ade80;">Strengths:</h3>
+          <ul style="color: #a0aec0;">
+            <li>Extremely effective for finding bugs in user flows</li>
+            <li>Highest confidence</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="color: #f87171;">Weaknesses:</h3>
+          <ul style="color: #a0aec0;">
+            <li>Expensive when testing all edge cases</li>
+            <li>Slower feedback loop</li>
+          </ul>
+        </div>
+      </div>
+
+      <p style="font-size: 1.1rem; color: #0ea5c1; font-weight: 600;">20-30% in Testing Trophy</p>
+    </div>
+  </section>
+
+  <!-- Slide 16: Integration Tests -->
+  <section>
+    <h2>Integration Tests: The New Big Boss</h2>
+    <div style="margin-top: 2rem;">
+      <p style="font-size: 1.3rem; font-weight: 600; color: #4ade80; margin-bottom: 2rem;">
+        Fast. Don't depend on backend or 3rd parties.
+      </p>
+
+      <div style="margin-bottom: 2rem;">
+        <h3 style="color: #e2e8f0;">What they test:</h3>
+        <ul style="color: #a0aec0;">
+          <li>Does the feature work for the user?</li>
+          <li>Mimics user actions (like E2E)</li>
+          <li>But with mocked API calls</li>
+        </ul>
+      </div>
+
+      <div style="margin-bottom: 2rem;">
+        <h3 style="color: #0ea5c1;">Why they're the sweet spot:</h3>
+        <ul style="color: #a0aec0;">
+          <li>High efficiency for finding bugs</li>
+          <li>Cheap to run</li>
+          <li>Fast feedback</li>
+        </ul>
+      </div>
+
+      <p style="font-size: 1.1rem; color: #0ea5c1; font-weight: 600;">50-60% in Testing Trophy</p>
+    </div>
+  </section>
+
+  <!-- Slide 17: Why the Shift? -->
+  <section>
+    <h2>Why the Shift to Integration Tests?</h2>
+    <div style="margin-top: 2rem;">
+      <div class="content-box" style="margin-bottom: 1.5rem;">
+        <span class="content-box-icon">🛠️</span>
+        <div class="content-box-content">
+          <h3>Modern tools made it possible</h3>
+          <ul style="color: #a0aec0; font-size: 0.9rem; margin: 0.5rem 0 0 0;">
+            <li>React Testing Library</li>
+            <li>Mock Service Worker (MSW)</li>
+            <li>Better testing frameworks</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-box" style="margin-bottom: 1.5rem;">
+        <span class="content-box-icon">✨</span>
+        <div class="content-box-content">
+          <h3>Modern practices</h3>
+          <ul style="color: #a0aec0; font-size: 0.9rem; margin: 0.5rem 0 0 0;">
+            <li>Test behavior, not implementation</li>
+            <li>Test like a user would use it</li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        style="border: 2px solid #0ea5c1; border-radius: 12px; padding: 1.5rem; background: rgba(14, 165, 193, 0.15);"
+      >
+        <p style="margin: 0; font-size: 1.1rem; font-weight: 600; color: #e2e8f0; text-align: center;">
+          Integration tests now give you E2E confidence at unit test speed.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 18: Old vs New Approach -->
+  <section>
+    <h2>Unit Testing Era vs Integration Testing Era</h2>
+    <table style="width: 100%; border-collapse: collapse; margin-top: 1.5rem; font-size: 0.85rem;">
+      <thead>
+        <tr style="border-bottom: 2px solid #0ea5c1;">
+          <th style="text-align: left; padding: 0.75rem; background: rgba(14, 165, 193, 0.1);"></th>
+          <th style="text-align: left; padding: 0.75rem; background: rgba(14, 165, 193, 0.1);">Old: Unit Tests</th>
+          <th style="text-align: left; padding: 0.75rem; background: rgba(14, 165, 193, 0.1);">
+            New: Integration Tests
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom: 1px solid #374151;">
+          <td style="padding: 0.75rem; font-weight: 600;">Mocking strategy</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">Mock everything (Mock hell)</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">Mock only API calls</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #374151;">
+          <td style="padding: 0.75rem; font-weight: 600;">Test scope</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">Small component in isolation</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">Entire page/feature</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #374151;">
+          <td style="padding: 0.75rem; font-weight: 600;">Test code style</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">Tests technical details (component state)</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">Tests user behavior (like E2E)</td>
+        </tr>
+        <tr>
+          <td style="padding: 0.75rem; font-weight: 600;">Testing boundary</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">UI component (mock API, Store, providers)</td>
+          <td style="padding: 0.75rem; color: #a0aec0;">API call (real providers, real store)</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top: 2rem; color: #0ea5c1; text-align: center; font-size: 1.1rem; font-weight: 600;">
+      The shift: From testing pieces to testing features.
+    </p>
+  </section>
+
+  <!-- Slide 19: Visual Comparison -->
+  <section>
+    <h2>Old Way vs New Way</h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem;">
+      <div>
+        <h3 style="color: #f87171; text-align: center; margin-bottom: 1rem;">Old Approach - Mock Hell</h3>
+        <pre class="mermaid">
+graph TB
+    A[User Action] --> B[Component<br/>MOCKED]
+    B --> C[Store<br/>MOCKED]
+    C --> D[API<br/>MOCKED]
+    D --> E[Providers<br/>MOCKED]
+
+    style A fill:#0ea5c1,stroke:#0284c7,color:#fff
+    style B fill:#ef4444,stroke:#dc2626,color:#fff
+    style C fill:#ef4444,stroke:#dc2626,color:#fff
+    style D fill:#ef4444,stroke:#dc2626,color:#fff
+    style E fill:#ef4444,stroke:#dc2626,color:#fff
+        </pre>
+        <p style="text-align: center; color: #f87171; font-weight: 600; margin-top: 1rem;">Multiple mocks to maintain</p>
+      </div>
+      <div>
+        <h3 style="color: #4ade80; text-align: center; margin-bottom: 1rem;">New Approach - Single Mock</h3>
+        <pre class="mermaid">
+graph TB
+    A[User Action] --> B[Component<br/>REAL]
+    B --> C[Store<br/>REAL]
+    C --> D[Providers<br/>REAL]
+    D --> E[API<br/>MOCKED with MSW]
+
+    style A fill:#0ea5c1,stroke:#0284c7,color:#fff
+    style B fill:#22c55e,stroke:#16a34a,color:#fff
+    style C fill:#22c55e,stroke:#16a34a,color:#fff
+    style D fill:#22c55e,stroke:#16a34a,color:#fff
+    style E fill:#f59e0b,stroke:#d97706,color:#fff
+        </pre>
+        <p style="text-align: center; color: #4ade80; font-weight: 600; margin-top: 1rem;">Only API mocked</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 20: Anatomy of React Integration Test -->
+  <section>
+    <h2>Anatomy of React Integration Test</h2>
+    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; margin-top: 1.5rem;">
+      <div>
+        <pre
+          style="font-size: 0.5rem; line-height: 1.3; background: #1e293b; padding: 1rem; border-radius: 8px; overflow-x: auto; max-height: 500px;"
+          ><code style="color: #e2e8f0;">import &#123; render, screen, waitFor &#125; from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import &#123; Provider &#125; from 'react-redux';
+import &#123; ThemeProvider &#125; from '@mui/material';
+import &#123; configureStore &#125; from '@reduxjs/toolkit';
+import &#123; setupServer &#125; from 'msw/node';
+import &#123; http, HttpResponse &#125; from 'msw';
+import &#123; TasksPage &#125; from './TasksPage';
+import &#123; tasksReducer &#125; from './tasksSlice';
+import &#123; theme &#125; from './theme';
+
+const server = setupServer(
+  http.get('/api/tasks', () =&gt; &#123;
+    return HttpResponse.json([
+      &#123; id: 1, title: 'Review PR' &#125;
+    ]);
+  &#125;),
+  http.post('/api/tasks', async (&#123; request &#125;) =&gt; &#123;
+    const body = await request.json();
+    return HttpResponse.json(&#123; id: 2, title: body.title &#125;);
+  &#125;)
+);
+
+beforeAll(() =&gt; server.listen());
+afterEach(() =&gt; server.resetHandlers());
+afterAll(() =&gt; server.close());
+
+function renderWithProviders(component) &#123;
+  const store = configureStore(&#123;
+    reducer: &#123; tasks: tasksReducer &#125;
+  &#125;);
+
+  return render(
+    &lt;Provider store=&#123;store&#125;&gt;
+      &lt;ThemeProvider theme=&#123;theme&#125;&gt;
+        &#123;component&#125;
+      &lt;/ThemeProvider&gt;
+    &lt;/Provider&gt;
+  );
+&#125;
+
+test('user creates new task', async () =&gt; &#123;
+  const user = userEvent.setup();
+
+  // Render with real providers
+  renderWithProviders(&lt;TasksPage /&gt;);
+
+  // Wait for initial data
+  expect(await screen.findByText('Review PR'))
+    .toBeInTheDocument();
+
+  // Open modal
+  await user.click(
+    screen.getByRole('button', &#123; name: /create/i &#125;)
+  );
+
+  // Fill form
+  await user.type(
+    screen.getByLabelText(/title/i),
+    'Deploy to staging'
+  );
+
+  // Submit
+  await user.click(
+    screen.getByRole('button', &#123; name: /save/i &#125;)
+  );
+
+  // Verify list updated
+  await waitFor(() =&gt; &#123;
+    expect(screen.getByText('Deploy to staging'))
+      .toBeInTheDocument();
+  &#125;);
+&#125;);</code></pre>
+      </div>
+      <div>
+        <div style="font-size: 0.8rem; line-height: 1.5;">
+          <div style="margin-bottom: 1.5rem;">
+            <h4 style="color: #0ea5c1; font-size: 0.9rem; margin-bottom: 0.5rem;">1. Setup MSW server</h4>
+            <p style="color: #a0aec0; font-size: 0.75rem;">Mock API endpoints and define responses</p>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <h4 style="color: #0ea5c1; font-size: 0.9rem; margin-bottom: 0.5rem;">2. Server lifecycle</h4>
+            <p style="color: #a0aec0; font-size: 0.75rem;">Start before tests, reset between tests, close after</p>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <h4 style="color: #0ea5c1; font-size: 0.9rem; margin-bottom: 0.5rem;">3. Arrange</h4>
+            <p style="color: #a0aec0; font-size: 0.75rem;">Render the page and wait for initial data load</p>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <h4 style="color: #0ea5c1; font-size: 0.9rem; margin-bottom: 0.5rem;">4. Act</h4>
+            <p style="color: #a0aec0; font-size: 0.75rem;">Click button, fill form fields, submit form</p>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <h4 style="color: #0ea5c1; font-size: 0.9rem; margin-bottom: 0.5rem;">5. Assert</h4>
+            <p style="color: #a0aec0; font-size: 0.75rem;">Wait for API call, verify UI updated, check new item appears</p>
+          </div>
+
+          <div
+            style="border: 2px solid #0ea5c1; border-radius: 8px; padding: 0.75rem; background: rgba(14, 165, 193, 0.15);"
+          >
+            <p style="margin: 0; font-size: 0.75rem; color: #e2e8f0;">
+              <strong>Key insight:</strong> Test reads like user behavior, not technical implementation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 21: Questions & Next Steps -->
+  <section>
+    <h2>Questions & Next Steps</h2>
+    <div style="margin-top: 2rem;">
+      <div style="margin-bottom: 2rem;">
+        <h3 style="color: #0ea5c1; margin-bottom: 1rem;">Questions to Consider:</h3>
+        <ul style="color: #a0aec0; font-size: 0.95rem;">
+          <li>Should we mention the automation engineer bottleneck?</li>
+          <li>What else have you seen teams struggle with?</li>
+          <li>Should we add "Cost" or "Developer experience" rows to comparison?</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 style="color: #0ea5c1; margin-bottom: 1rem;">Next Batch Planned:</h3>
+        <ul style="color: #a0aec0; font-size: 0.95rem;">
+          <li>The Testing Trophy explained in depth</li>
+          <li>How testing evolved (2020 vs 2025)</li>
+          <li>RTL + MSW in practice</li>
+          <li>Your two strategies (E2E only vs E2E + Integration)</li>
+          <li>Making the shift (practical steps)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 22: Thank you -->
+  <section>
+    <h2>Thank you!</h2>
+  </section>
+</PresentationLayout>
