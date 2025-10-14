@@ -1,10 +1,12 @@
 ---
 import { GoogleAnalytics } from '@astrolib/analytics';
 import { ANALYTICS } from 'astrowind:config';
+
+const isDev = import.meta.env.DEV;
 ---
 
 {
-  ANALYTICS?.vendors?.googleAnalytics?.id ? (
+  !isDev && ANALYTICS?.vendors?.googleAnalytics?.id ? (
     <GoogleAnalytics
       id={String(ANALYTICS.vendors.googleAnalytics.id)}
       partytown={ANALYTICS?.vendors?.googleAnalytics?.partytown}
@@ -13,7 +15,7 @@ import { ANALYTICS } from 'astrowind:config';
 }
 
 {
-  ANALYTICS?.vendors?.umami?.websiteId ? (
+  !isDev && ANALYTICS?.vendors?.umami?.websiteId ? (
     <script is:inline defer src={ANALYTICS.vendors.umami.src} data-website-id={ANALYTICS.vendors.umami.websiteId} />
   ) : null
 }
